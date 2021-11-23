@@ -11,6 +11,10 @@
 |
 */
 
+// TOPページ「/」にリクエストが来たら、TOPページのviewファイル（index.blade.php）を返す。
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
+Route::get('/talks_latest', 'TalkController@index_latest');
