@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTalksTable extends Migration
+class AddTalkIdToPostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,8 @@ class CreateTalksTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('talks')) {
-            // テーブルが存在していればリターン
-            return;
-        }
-        Schema::create('talks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->bigInteger('talk_id')->unsigned();
         });
     }
 
@@ -30,6 +25,8 @@ class CreateTalksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('talks');
+        Schema::table('posts', function (Blueprint $table) {
+            //
+        });
     }
 }

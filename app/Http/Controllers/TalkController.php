@@ -12,5 +12,11 @@ class TalkController extends Controller
     {
         return view('talks_latest/index')->with(['talks' => $talk->getPaginateByLimit_latest()]);
     }
+    
+    // 最新のトーク一覧画面から、各トークの詳細（トークページ）にアクセスがあったとき
+    public function show(Talk $talk)
+    {
+        return view('talks_latest/show')->with(['own_posts' => $talk->getOwnPostsByLimit()]);
+    }
 
 }
