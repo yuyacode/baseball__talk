@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTalksTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTalksTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('talks')) {
+        if (Schema::hasTable('posts')) {
             // テーブルが存在していればリターン
             return;
         }
-        Schema::create('talks', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateTalksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('talks');
+        Schema::dropIfExists('posts');
     }
 }

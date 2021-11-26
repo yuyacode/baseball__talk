@@ -18,3 +18,6 @@ Route::get('/', function () {
 
 // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
 Route::get('/talks_latest', 'TalkController@index_latest');
+
+// 最新のトーク一覧画面から、各トークの詳細（トークページ）にアクセスがあったとき
+Route::get('talks_latest/{talk}', 'TalkController@show');

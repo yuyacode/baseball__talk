@@ -1,4 +1,5 @@
-<!--最新のトーク一覧ページ-->
+<!--test-->
+<!--トークの詳細画面（トーク画面）-->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,18 +12,12 @@
     </head>
     <body>
         <div class="container">
-            <h1>最新のトーク一覧</h1>
-            <div class="talks_latest">
-                @foreach($talks as $talk)
-                    <div class="talk_latest">
-                        <h2 class="talk_latest--title"><a href="talks_latest/{{ $talk->id }}">{{ $talk->title }}</a></h2>
-                        <p class="talk_latest--created_at">{{ $talk->created_at }}</p>
-                    </div>
-                @endforeach
+            @foreach($own_posts as $post)
+            <div>
+                <p>{{ $post->body }}</p>
+                <p>{{ $post->created_at }}</p>
             </div>
-            <div class="paginate">
-                {{ $talks->links() }}
-            </div>
+            @endforeach
         </div>
     </body>
 </html>
