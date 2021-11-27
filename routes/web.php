@@ -11,7 +11,8 @@
 |
 */
 
-// TOPページ「/」にリクエストが来たら、TOPページのviewファイル（index.blade.php）を返す。
+
+// TOPページ「/」にリクエストが来たとき、TOPページのviewファイル（index.blade.php）を返す。
 Route::get('/', function () {
     return view('index');
 });
@@ -19,5 +20,8 @@ Route::get('/', function () {
 // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
 Route::get('/talks_latest', 'TalkController@index_latest');
 
-// 最新のトーク一覧画面から、各トークの詳細（トークページ）にアクセスがあったとき
-Route::get('talks_latest/{talk}', 'TalkController@show');
+// 最新のトーク一覧画面から、各トークの詳細画面（各トークページ）にリクエストが来た場合
+Route::get('talks_latest/{talk}', 'TalkController@show_latest');
+
+// ユーザーが新規投稿を作成
+Route::post("/posts", 'PostController@store');

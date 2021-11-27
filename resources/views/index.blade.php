@@ -11,7 +11,9 @@
     </head>
     <body>
         <div class="container">
+            <!--画面左側-->
             <div class="wrapper-left">
+                <!--最新のトーク-->
                 <div class="talks-latest">
                     <h2>最新のトーク</h2>
                     <p>・～～～</p>
@@ -19,6 +21,7 @@
                     <p><a href="/talks_latest">一覧へ</a></p>
                 </div>
             </div>
+            <!--画面右側-->
             <div class="wrapper-right"></div>
         </div>
     </body>

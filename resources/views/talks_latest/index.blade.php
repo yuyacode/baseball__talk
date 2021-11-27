@@ -1,4 +1,4 @@
-<!--最新のトーク一覧ページ-->
+<!--最新のトークの一覧ページ-->
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,6 +11,7 @@
     </head>
     <body>
         <div class="container">
+            <!-- 最新のトーク一覧 -->
             <h1>最新のトーク一覧</h1>
             <div class="talks_latest">
                 @foreach($talks as $talk)
@@ -20,6 +21,7 @@
                     </div>
                 @endforeach
             </div>
+            <!-- ページネーション -->
             <div class="paginate">
                 {{ $talks->links() }}
             </div>
