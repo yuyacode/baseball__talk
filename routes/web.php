@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('index');
 });
 
+// TOPページにリクエストが来た際、最新のトークを5件表示するためのルーティング
+Route::get('/', 'TalkController@index_latest_top');
+
 // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
 Route::get('/talks_latest', 'TalkController@index_latest');
 

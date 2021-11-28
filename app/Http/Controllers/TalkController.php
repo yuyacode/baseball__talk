@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class TalkController extends Controller
 {
+    
+    // TOPページにリクエストが来た際、最新のトークを5件表示する処理
+    public function index_latest_top(Talk $talk)
+    {
+        return view('index')->with(['talks_latest' => $talk->getTalksByLimit_latest()]);
+    }
 
     // 最新のトーク一覧画面にリクエストが来た場合の処理
     public function index_latest(Talk $talk)
