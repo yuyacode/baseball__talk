@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Talk extends Model
 {
 
+    // TOPページにリクエストが来た際、最新のトークを5件表示する処理
+    public function getTalksByLimit_latest(int $limit_count = 5)
+    {
+        return $this->orderBy('created_at', 'DESC')->limit($limit_count)->get();
+    }
+
     // 最新のトークの一覧ページを表示するための処理
     public function getPaginateByLimit_latest(int $limit_count = 10)
     {
@@ -32,5 +38,6 @@ class Talk extends Model
         return $this::with('posts')->find(Talk::id())->posts()->orderBy('created_at', 'ASC')->paginate($limit_count);;
     }
     
+
 
 }
