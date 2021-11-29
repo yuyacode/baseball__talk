@@ -10,25 +10,28 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        <!--内容-->
         <div class="container">
             <!--画面左側-->
             <div class="wrapper-left">
                 <!--人気のトーク-->
-                <div class="talks-popular">
+                <div class="top_talks--popular">
                     <h2>人気のトーク</h2>
-                    <div class="talk_popular_top">
-                        <p>・〇〇〇〇</p>
-                        <p>・〇〇〇〇</p>
+                    @foreach($talks_popular as $talk_popular)
+                    <div class="talk_popular">
+                        <h2 class="talk_popular--title"><a href="talks/{{ $talk_popular->id }}">{{ $talk_popular->title }}</a></h2>
+                        <p class="talk_popular--created_at">{{ $talk_popular->created_at }}</p>
                     </div>
+                    @endforeach
                     <p><a href="/talks_popular">一覧へ</a></p>
                 </div>
                 <!--最新のトーク-->
-                <div class="talks-latest">
+                <div class="top_talks--latest">
                     <h2>最新のトーク</h2>
                     @foreach($talks_latest as $talk_latest)
-                    <div class="talk_latest_top">
-                        <h2 class="talk_latest_top--title"><a href="talks_latest/{{ $talk_latest->id }}">{{ $talk_latest->title }}</a></h2>
-                        <p class="talk_latest_top--created_at">{{ $talk_latest->created_at }}</p>
+                    <div class="talk_latest">
+                        <h2 class="talk_latest--title"><a href="talks/{{ $talk_latest->id }}">{{ $talk_latest->title }}</a></h2>
+                        <p class="talk_latest--created_at">{{ $talk_latest->created_at }}</p>
                     </div>
                     @endforeach
                     <p><a href="/talks_latest">一覧へ</a></p>

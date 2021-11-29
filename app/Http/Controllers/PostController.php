@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use App\Talk;
+use App\Post;
 use App\Http\Requests\PostRequest;
 // use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
     
     // ユーザーから新規投稿があった場合、入力した投稿内容と属するトークのIDをDBに保存＆属するtalkの投稿数に＋1し、トーク画面へリダイレクトする処理
     public function store(PostRequest $request, Post $post, Talk $talk)
@@ -27,7 +28,8 @@ class PostController extends Controller
         // 保存
         $belong_to_talk->save();
         // トーク画面にリダイレクト
-        return redirect('/talks_latest/'.$post->talk_id);
+        return redirect('/talks/'.$post->talk_id);
     }
+
 
 }
