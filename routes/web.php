@@ -12,19 +12,17 @@
 */
 
 
-// TOPページ「/」にリクエストが来たとき、TOPページのviewファイル（index.blade.php）を返す。
-Route::get('/', function () {
-    return view('index');
-});
+// TOPページにリクエストが来た際、人気と最新のトークを5件表示する処理
+Route::get('/', 'TalkController@top');
 
-// TOPページにリクエストが来た際、最新のトークを5件表示するためのルーティング
-Route::get('/', 'TalkController@index_latest_top');
+// 人気のトーク一覧画面「/talks_popular」にリクエストが来た場合
+Route::get('/talks_popular', 'TalkController@index_popular');
 
 // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
 Route::get('/talks_latest', 'TalkController@index_latest');
 
-// 最新のトーク一覧画面から、各トークの詳細画面（各トークページ）にリクエストが来た場合
-Route::get('talks_latest/{talk}', 'TalkController@show_latest');
+// 人気と最新のトーク一覧画面から、各トークの詳細画面（各トークページ）にリクエストが来た場合
+Route::get('talks/{talk}', 'TalkController@show');
 
 // ユーザーが新規投稿を作成
 Route::post("/posts", 'PostController@store');
