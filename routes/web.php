@@ -26,3 +26,6 @@ Route::get('talks/{talk}', 'TalkController@show');
 
 // ユーザーが新規投稿を作成
 Route::post("/posts", 'PostController@store');
+
+// ユーザーがトークテーマを作成
+Route::post('/talks', 'TalkController@store');

@@ -7,6 +7,10 @@ use Carbon\Carbon; //test
 
 class Talk extends Model
 {
+    
+    protected $fillable = [
+        'title',
+    ];
 
 
     // TOPページにリクエストが来た際、人気のトークを5件表示する処理
