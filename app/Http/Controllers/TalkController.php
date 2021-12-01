@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Talk;
-use Illuminate\Http\Request;
+use App\Http\Requests\TalkRequest;
+// use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class TalkController extends Controller
@@ -38,6 +39,14 @@ class TalkController extends Controller
     public function show(Talk $talk)
     {
         return view('show')->with(['own_posts' => $talk->getOwnPostsByLimit(), 'talk' => $talk]);
+    }
+    
+    // ユーザーがトークテーマを作成したときの処理
+    public function store(TalkRequest $request, Talk $talk)
+    {
+        $input = $request['talk'];
+        $talk->fill($input)->save();
+        return redirect('/talks/'.$talk->id);
     }
 
 

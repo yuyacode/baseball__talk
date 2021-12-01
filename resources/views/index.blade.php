@@ -38,7 +38,18 @@
                 </div>
             </div>
             <!--画面右側-->
-            <div class="wrapper-right"></div>
+            <div class="wrapper-right">
+                <!-- ユーザーのトーク作成箇所 -->
+                <form action="/talks" method="POST">
+                    @csrf
+                    <div class="create_talk">
+                        <p>トークテーマを作成</p>
+                        <input type="text" name="talk[title]" value="{{ old('talk.title') }}" />
+                        <p class="title_error" style="color:red">{{ $errors->first('talk.title') }}</p>
+                    </div>
+                    <input type="submit" value="作成"/>
+                </form>
+            </div>
         </div>
     </body>
 </html>
