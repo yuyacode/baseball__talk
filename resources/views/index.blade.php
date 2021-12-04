@@ -49,6 +49,8 @@
                     </div>
                     <input type="submit" value="作成"/>
                 </form>
+                <!-- 選手情報一覧・登録ページ -->
+                <p><a href="/teams_info">管理者ページ（選手情報一覧、登録）</a></p>
             </div>
         </div>
     </body>

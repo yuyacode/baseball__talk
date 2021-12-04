@@ -13,13 +13,13 @@ class CreateTalksTable extends Migration
      */
     public function up()
     {
-        if (Schema::hasTable('talks')) {
-            // テーブルが存在していればリターン
-            return;
-        }
         Schema::create('talks', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('title', 50);
+            $table->integer('posts_number')->default(0);
+            $table->timestamp('created_at')->nullable(false)->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->nullable(false)->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->softDeletes();
         });
     }
 

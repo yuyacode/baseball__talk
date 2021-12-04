@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTalkIdToPostsTable extends Migration
+class AddTeamIdToPlayersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTalkIdToPostsTable extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->bigInteger('talk_id')->unsigned();
+        Schema::table('players', function (Blueprint $table) {
+            $table->integer('team_id')->unsigned();
         });
     }
 
@@ -25,7 +25,7 @@ class AddTalkIdToPostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
+        Schema::table('players', function (Blueprint $table) {
             //
         });
     }
