@@ -8,9 +8,8 @@ class Post extends Model
 {
 
     protected $fillable = [
-        'body',
-        'user_id',
-        'talk_id'
+        'talk_id',
+        'body'
     ];
 
     //Talkに対するリレーション

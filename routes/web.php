@@ -37,4 +37,7 @@ Route::get('/teams_info', 'TeamController@index');
 Route::get('/players_info/{team}', 'TeamController@show');
 
 // 選手を登録
-Route::post("/players", 'PlayerController@store');
+Route::post('/players', 'PlayerController@store');
+
+// 選手を削除
+Route::delete('/players_info/{player}', 'PlayerController@delete');

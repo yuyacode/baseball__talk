@@ -28,6 +28,7 @@ class PlayerRequest extends FormRequest
         return [
             'player.number' => 'required|integer',
             'player.name' => 'required|string|max:30',
+            'player.position_id' => 'required',
         ];
     }
 }
