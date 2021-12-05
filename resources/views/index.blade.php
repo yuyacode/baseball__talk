@@ -40,15 +40,15 @@
             <!--画面右側-->
             <div class="wrapper-right">
                 <!-- ユーザーのトーク作成箇所 -->
-                <form action="/talks" method="POST">
-                    @csrf
-                    <div class="create_talk">
+                <div class="create_talk">
+                    <form action="/talks" method="POST">
+                        @csrf
                         <p>トークテーマを作成</p>
                         <input type="text" name="talk[title]" value="{{ old('talk.title') }}" />
                         <p class="title_error" style="color:red">{{ $errors->first('talk.title') }}</p>
-                    </div>
-                    <input type="submit" value="作成"/>
-                </form>
+                        <input type="submit" value="作成"/>
+                    </form>
+                </div>
                 <!-- 選手情報一覧・登録ページ -->
                 <p><a href="/teams_info">管理者ページ（選手情報一覧、登録）</a></p>
             </div>
