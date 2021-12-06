@@ -24,21 +24,21 @@ class TalkController extends Controller
     // 人気のトーク一覧画面にリクエストが来た場合の処理
     public function index_popular(Talk $talk)
     {
-        return view('talks_popular/index')->with(['talks' => $talk->getPaginateByLimit_popular()]);
+        return view('talks/index_popular')->with(['talks' => $talk->getPaginateByLimit_popular()]);
     }
     
     
     // 最新のトーク一覧画面にリクエストが来た場合の処理
     public function index_latest(Talk $talk)
     {
-        return view('talks_latest/index')->with(['talks' => $talk->getPaginateByLimit_latest()]);
+        return view('talks/index_latest')->with(['talks' => $talk->getPaginateByLimit_latest()]);
     }
     
     
     // 人気と最新のトーク一覧画面から、各トークの詳細画面（トークページ）にリクエストが来た場合の処理
     public function show(Talk $talk)
     {
-        return view('show')->with(['own_posts' => $talk->getOwnPostsByLimit(), 'talk' => $talk]);
+        return view('talks/show')->with(['own_posts' => $talk->getOwnPostsByLimit(), 'talk' => $talk]);
     }
     
     // ユーザーがトークテーマを作成したときの処理
