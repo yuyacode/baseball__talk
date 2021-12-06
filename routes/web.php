@@ -41,3 +41,12 @@ Route::post('/players', 'PlayerController@store');
 
 // 選手を削除
 Route::delete('/players_info/{player}', 'PlayerController@delete');
+
+// TOPページにて、球団トークを選択
+Route::get('/team_talks', 'TeamTalksController@index');
+
+// 球団のトーク一覧画面から、詳細画面へ
+Route::get('/team_talks/{team_talk}', 'TeamTalksController@show');
+
+// ユーザーが球団トークにて、新規投稿を作成
+Route::post("/team_posts", 'TeamPostsController@store');

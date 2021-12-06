@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon; //test
+use Carbon\Carbon;
 
 class Talk extends Model
 {
