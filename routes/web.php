@@ -25,7 +25,7 @@ Route::get('/talks_latest', 'TalkController@index_latest');
 Route::get('/talks/{talk}', 'TalkController@show');
 
 // ユーザーが新規投稿を作成
-Route::post("/posts", 'PostController@store');
+Route::post('/posts', 'PostController@store');
 
 // ユーザーがトークテーマを作成
 Route::post('/talks', 'TalkController@store');
@@ -49,4 +49,13 @@ Route::get('/team_talks', 'TeamTalksController@index');
 Route::get('/team_talks/{team_talk}', 'TeamTalksController@show');
 
 // ユーザーが球団トークにて、新規投稿を作成
-Route::post("/team_posts", 'TeamPostsController@store');
+Route::post('/team_posts', 'TeamPostsController@store');
+
+// TOPページにて、スタジアムトーク（球場情報）を選択
+Route::get('/stadium_talks', 'StadiumTalksController@index');
+
+// 球場情報の一覧画面から、詳細画面へ
+Route::get('/stadium_talks/{stadium_talk}', 'StadiumTalksController@show');
+
+// ユーザーがスタジアムトーク（球場情報）にて、新規投稿を作成
+Route::post('/stadium_posts', 'StadiumPostsController@store');
