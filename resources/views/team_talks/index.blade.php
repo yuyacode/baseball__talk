@@ -1,4 +1,5 @@
 <!-- 球団トークの一覧ページ -->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
             <!-- 球団のトーク一覧 -->
             <h2>球団のトーク一覧</h2>
@@ -22,5 +24,6 @@
                 @endforeach
             </div>
         </div>
+        @endsection
     </body>
 </html>
