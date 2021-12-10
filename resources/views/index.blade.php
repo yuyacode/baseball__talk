@@ -1,4 +1,5 @@
 <!--TOPページ-->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <!--内容-->
         <div class="container">
             <!--画面左側-->
@@ -59,5 +61,6 @@
                 <p><a href="/teams_info">管理者ページ（選手情報一覧、登録）</a></p>
             </div>
         </div>
+        @endsection
     </body>
 </html>

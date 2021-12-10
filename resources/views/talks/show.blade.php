@@ -1,4 +1,5 @@
 <!--各トークの詳細画面（トーク画面）-->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,7 +11,10 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
+            <!--トークテーマ-->
+            <h2>{{ $talk->title }}</h2>
             <!--トークに属する投稿を取得-->
             @foreach($own_posts as $post)
             <div>
@@ -32,5 +36,6 @@
             <p><a href="/talks_popular">「人気のトーク」一覧へ</a></p>
             <p><a href="/talks_latest">「最新のトーク」一覧へ</a></p>
         </div>
+        @endsection
     </body>
 </html>

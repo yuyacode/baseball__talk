@@ -1,4 +1,5 @@
 <!--最新のトークの一覧ページ-->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
             <!-- 最新のトーク一覧 -->
             <h1>最新のトーク一覧</h1>
@@ -26,5 +28,6 @@
                 {{ $talks->links() }}
             </div>
         </div>
+        @endsection
     </body>
 </html>

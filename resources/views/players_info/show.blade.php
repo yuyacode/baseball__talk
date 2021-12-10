@@ -1,4 +1,5 @@
 <!-- 選択したチームに所属する選手を一覧で表示 -->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
             <!-- チーム名 -->
             <h2>{{ $team->name }}</h2>
@@ -63,5 +65,6 @@
             <!-- チーム選択画面へ戻る -->
             <p><a href="/teams_info">チーム選択画面へ</a></p>
         </div>
+        @endsection
     </body>
 </html>

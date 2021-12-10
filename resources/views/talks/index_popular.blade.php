@@ -1,4 +1,5 @@
 <!--人気のトークの一覧ページ-->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
             <!-- 人気のトーク一覧 -->
             <h1>人気のトーク一覧</h1>
@@ -27,5 +29,6 @@
                 {{ $talks->links() }}
             </div>
         </div>
+        @endsection
     </body>
 </html>

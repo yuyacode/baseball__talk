@@ -1,4 +1,5 @@
 <!-- 球場情報のトーク詳細画面（トーク画面）-->
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -10,6 +11,7 @@
         <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
+        @section('content')
         <div class="container">
             <!-- 球場名表示 -->
             <h2>トークテーマ「{{ $stadium_talk->title }}」</h2>
@@ -33,5 +35,6 @@
             <!-- 球場一覧画面へのリンク -->
             <p><a href="/stadium_talks">球場選択ページへ</a></p>
         </div>
+        @endsection
     </body>
 </html>
