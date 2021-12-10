@@ -39,8 +39,7 @@
                 <!--各トークテーマ一覧-->
                 <div class="talk_theme_list">
                     <h2 class="talk_theme_list--title">各トークテーマ一覧</h2>
-                    <p><a href="/team_talks">球団</a></p>
-                    <p><a href="/player_talks">選手</a></p>
+                    <p><a href="/team_talks">球団トーク</a></p>
                     <p><a href="/stadium_talks">球場情報</a></p>
                 </div>
             </div>

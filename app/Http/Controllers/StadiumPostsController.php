@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\StadiumPost;
-// use Illuminate\Http\Request;
 use App\Http\Requests\StadiumPostRequest;
 
 class StadiumPostsController extends Controller
