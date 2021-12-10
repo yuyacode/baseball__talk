@@ -32,18 +32,6 @@ Route::group(['middleware' => 'auth'], function(){
     // ユーザーがトークテーマを作成
     Route::post('/talks', 'TalkController@store');
 
-    // 選手情報一覧・登録ページにリクエストが来た場合
-    Route::get('/teams_info', 'TeamController@index');
-
-    // 選手情報一覧・登録の処理にて、球団が選択されたときの処理
-    Route::get('/players_info/{team}', 'TeamController@show');
-
-    // 選手を登録
-    Route::post('/players', 'PlayerController@store');
-
-    // 選手を削除
-    Route::delete('/players_info/{player}', 'PlayerController@delete');
-
     // TOPページにて、球団トークを選択
     Route::get('/team_talks', 'TeamTalksController@index');
 
