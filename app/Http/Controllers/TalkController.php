@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Talk;
 use App\Http\Requests\TalkRequest;
-// use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class TalkController extends Controller

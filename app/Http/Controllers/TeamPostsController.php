@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\TeamPost;
-// use Illuminate\Http\Request;
 use App\Http\Requests\TeamPostRequest;
 
 class TeamPostsController extends Controller

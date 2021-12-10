@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Player;
-// use Illuminate\Http\Request;
 use App\Http\Requests\PlayerRequest;
 
 class PlayerController extends Controller
