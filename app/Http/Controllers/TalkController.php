@@ -44,6 +44,7 @@ class TalkController extends Controller
     public function store(TalkRequest $request, Talk $talk)
     {
         $input = $request['talk'];
+        $input += ['user_id' => $request->user()->id];
         $talk->fill($input)->save();
         return redirect('/talks/'.$talk->id);
     }

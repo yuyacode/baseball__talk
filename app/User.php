@@ -36,4 +36,37 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    
+    // Talkに対するリレーション
+    //「1対多」の関係なので'talks'と複数形に
+    public function talks()   
+    {
+        return $this->hasMany('App\Talk');  
+    }
+    
+    
+    // Postに対するリレーション
+    //「1対多」の関係なので'posts'と複数形に
+    public function posts()   
+    {
+        return $this->hasMany('App\Post');  
+    }
+    
+    
+    // TeamPostに対するリレーション
+    //「1対多」の関係なので'team_posts'と複数形に
+    public function team_posts()   
+    {
+        return $this->hasMany('App\TeamPost');  
+    }
+    
+    
+    // StadiumPostに対するリレーション
+    //「1対多」の関係なので'stadium_posts'と複数形に
+    public function stadium_posts()   
+    {
+        return $this->hasMany('App\StadiumPost');  
+    }
+    
 }

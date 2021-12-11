@@ -15,10 +15,13 @@
         <div class="container">
             <!--トークテーマ-->
             <h2>{{ $talk->title }}</h2>
+            <!-- トーク作成者 -->
+            <p>トーク作成者：{{ $talk->user->name }}</p>
             <!--トークに属する投稿を取得-->
             @foreach($own_posts as $post)
             <div>
                 <p>{{ $post->body }}</p>
+                <p>{{ $post->user->name }}</p>
                 <p>{{ $post->created_at }}</p>
             </div>
             @endforeach

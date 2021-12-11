@@ -19,6 +19,7 @@
             @foreach($own_posts as $post)
             <div>
                 <p>{{ $post->body }}</p>
+                <p>{{ $post->user->name }}</p>
                 <p>{{ $post->created_at }}</p>
             </div>
             @endforeach

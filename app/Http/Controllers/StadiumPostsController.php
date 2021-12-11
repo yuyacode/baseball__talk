@@ -12,6 +12,7 @@ class StadiumPostsController extends Controller
     public function store(StadiumPostRequest $request, StadiumPost $stadium_post)
     {
         $input = $request['stadium_post'];
+        $input += ['user_id' => $request->user()->id];
         $stadium_post->fill($input)->save();
         return redirect('/stadium_talks/' . $stadium_post->stadium_talk_id);
     }

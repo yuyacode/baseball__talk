@@ -9,14 +9,22 @@ class Post extends Model
 
     protected $fillable = [
         'talk_id',
-        'body'
+        'body',
+        'user_id'
     ];
 
-    //Talkに対するリレーション
+    // Talkに対するリレーション
     //「1対多」の関係なので単数系に
     public function talk()
     {
         return $this->belongsTo('App\Talk');
+    }
+    
+    // Userに対するリレーション
+    //「1対多」の関係なので単数系に
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
 }

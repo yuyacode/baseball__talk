@@ -14,6 +14,7 @@ class PostController extends Controller
     {
         // ユーザーからの入力(talk_idとbody)を取得し、投稿データを上書き
         $input = $request['post'];
+        $input += ['user_id' => $request->user()->id];
         $post->fill($input)->save();
         // ユーザーが投稿しているトークを特定
         $belong_to_talk = Talk::find($post->talk_id);
