@@ -12,6 +12,7 @@ class TeamPostsController extends Controller
     public function store(TeamPostRequest $request, TeamPost $team_post)
     {
         $input = $request['team_post'];
+        $input += ['user_id' => $request->user()->id];
         $team_post->fill($input)->save();
         return redirect('/team_talks/' . $team_post->team_talk_id);
     }
