@@ -19,10 +19,14 @@
             @foreach($own_posts as $post)
             <div>
                 <p>{{ $post->body }}</p>
-                <p>{{ $post->user->name }}</p>
+                <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
             </div>
             @endforeach
+            <!-- ページネーション -->
+            <div class='paginate'>
+                {{ $own_posts->links() }}
+            </div>
             <!-- ユーザーの投稿作成箇所 -->
             <form action="/team_posts" method="POST">
                 @csrf
