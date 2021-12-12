@@ -15,7 +15,7 @@
 Route::group(['middleware' => 'auth'], function(){
 
     // TOPページにリクエストが来た際、人気と最新のトークを5件表示する処理
-    Route::get('/', 'TalkController@top');
+    Route::get('/', 'TalkController@index');
 
     // 人気のトーク一覧画面「/talks_popular」にリクエストが来た場合
     Route::get('/talks_popular', 'TalkController@index_popular');
@@ -28,9 +28,15 @@ Route::group(['middleware' => 'auth'], function(){
 
     // ユーザーが新規投稿を作成
     Route::post('/posts', 'PostController@store');
+    
+    // ユーザーが投稿を削除
+    Route::delete('/posts/{post}', 'PostController@destroy');
 
     // ユーザーがトークテーマを作成
     Route::post('/talks', 'TalkController@store');
+    
+    // ユーザーがトークを削除
+    Route::delete('/talks/{talk}', 'TalkController@destroy');
 
     // TOPページにて、球団トークを選択
     Route::get('/team_talks', 'TeamTalksController@index');
@@ -49,6 +55,9 @@ Route::group(['middleware' => 'auth'], function(){
 
     // ユーザーがスタジアムトーク（球場情報）にて、新規投稿を作成
     Route::post('/stadium_posts', 'StadiumPostsController@store');
+    
+    // マイページへアクセス
+    Route::get('/mypage/{user}', 'UserController@index');
 
 });
 

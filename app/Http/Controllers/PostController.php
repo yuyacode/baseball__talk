@@ -29,5 +29,24 @@ class PostController extends Controller
         // トーク画面にリダイレクト
         return redirect('/talks/'.$post->talk_id);
     }
+    
+    
+    public function destroy(Post $post, Talk $talk)
+    {
+        $this->authorize('delete', $post);
+        $post->delete();
+        // ユーザーが投稿しているトークを特定
+        $belong_to_talk = Talk::find($post->talk_id);
+        // 属するトークの直前までの投稿数を取得
+        $current_posts_number = $belong_to_talk['posts_number'];
+        // 投稿数に-1
+        $current_posts_number -= 1;
+        // ＋1した投稿数を、属するトークのposts_number(投稿数)カラムに代入(更新)
+        $belong_to_talk->posts_number = $current_posts_number;
+        // 保存
+        $belong_to_talk->save();
+        // トーク画面にリダイレクト
+        return redirect('/talks/'.$post->talk_id);
+    }
 
 }

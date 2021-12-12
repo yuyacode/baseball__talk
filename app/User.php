@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -67,6 +68,13 @@ class User extends Authenticatable
     public function stadium_posts()   
     {
         return $this->hasMany('App\StadiumPost');  
+    }
+    
+    
+    // マイページにて、ユーザーのトークを取得する処理
+    public function getOwnPaginateByLimit(int $limit_count = 20)
+    {
+        return $this->talks()->orderBy('created_at', 'DESC')->paginate($limit_count);
     }
     
 }

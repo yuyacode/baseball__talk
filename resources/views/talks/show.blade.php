@@ -16,15 +16,26 @@
             <!--トークテーマ-->
             <h2>{{ $talk->title }}</h2>
             <!-- トーク作成者 -->
-            <p>トーク作成者：{{ $talk->user->name }}</p>
+            <p>トーク作成者：<a href="/mypage/{{ $talk->user->id }}">{{ $talk->user->name }}</a></p>
             <!--トークに属する投稿を取得-->
             @foreach($own_posts as $post)
             <div>
                 <p>{{ $post->body }}</p>
                 <p>{{ $post->user->name }}</p>
                 <p>{{ $post->created_at }}</p>
+                @if(Auth::user()->id === $post->user_id)
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button> 
+                </form>
+                @endif
             </div>
             @endforeach
+            <!-- ページネーション -->
+            <div class='paginate'>
+                {{ $own_posts->links() }}
+            </div>
             <!-- ユーザーの投稿作成箇所 -->
             <form action="/posts" method="POST">
                 @csrf
