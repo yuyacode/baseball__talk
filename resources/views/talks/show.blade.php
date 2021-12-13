@@ -21,7 +21,7 @@
             @foreach($own_posts as $post)
             <div>
                 <p>{{ $post->body }}</p>
-                <p>{{ $post->user->name }}</p>
+                <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
                 @if(Auth::user()->id === $post->user_id)
                 <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">

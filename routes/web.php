@@ -46,6 +46,9 @@ Route::group(['middleware' => 'auth'], function(){
 
     // ユーザーが球団トークにて、新規投稿を作成
     Route::post('/team_posts', 'TeamPostsController@store');
+    
+    // ユーザーが球団トークにて、投稿を削除
+    Route::delete('/team_posts/{post}', 'TeamPostsController@destroy');
 
     // TOPページにて、スタジアムトーク（球場情報）を選択
     Route::get('/stadium_talks', 'StadiumTalksController@index');
