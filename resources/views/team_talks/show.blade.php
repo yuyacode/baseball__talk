@@ -21,6 +21,13 @@
                 <p>{{ $post->body }}</p>
                 <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
+                @if(Auth::user()->id === $post->user_id)
+                <form action="/team_posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button> 
+                </form>
+                @endif
             </div>
             @endforeach
             <!-- ページネーション -->
