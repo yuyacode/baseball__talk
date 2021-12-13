@@ -10,7 +10,7 @@ class TalkController extends Controller
 {
     
     
-    // TOPページにリクエストが来た際、人気と最新のトークを5件表示する処理
+    // TOPページにて、人気,最新のトークを5件表示
     public function index(Talk $talk)
     {
         return view('index')->with([
@@ -20,21 +20,21 @@ class TalkController extends Controller
     }
 
 
-    // 人気のトーク一覧画面にリクエストが来た場合の処理
+    // 人気のトーク一覧画面を表示
     public function index_popular(Talk $talk)
     {
         return view('talks/index_popular')->with(['talks' => $talk->getPaginateByLimit_popular()]);
     }
     
     
-    // 最新のトーク一覧画面にリクエストが来た場合の処理
+    // 最新のトーク一覧画面を表示
     public function index_latest(Talk $talk)
     {
         return view('talks/index_latest')->with(['talks' => $talk->getPaginateByLimit_latest()]);
     }
     
     
-    // 人気と最新のトーク一覧画面から、各トークの詳細画面（トークページ）にリクエストが来た場合の処理
+    // 人気,最新のトーク一覧画面から、各トークの詳細画面を表示
     public function show(Talk $talk)
     {
         return view('talks/show')->with([
@@ -43,7 +43,7 @@ class TalkController extends Controller
         ]);
     }
     
-    // ユーザーがトークテーマを作成したときの処理
+    // ユーザーがトークテーマを作成
     public function store(TalkRequest $request, Talk $talk)
     {
         $input = $request['talk'];
@@ -52,7 +52,7 @@ class TalkController extends Controller
         return redirect('/talks/'.$talk->id);
     }
     
-    // ユーザーがトークテーマを削除したときの処理
+    // ユーザーがトークテーマを削除
     public function destroy(Talk $talk)
     {
         $this->authorize('delete', $talk);

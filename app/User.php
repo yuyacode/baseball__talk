@@ -55,23 +55,7 @@ class User extends Authenticatable
     }
     
     
-    // TeamPostに対するリレーション
-    //「1対多」の関係なので'team_posts'と複数形に
-    public function team_posts()   
-    {
-        return $this->hasMany('App\TeamPost');  
-    }
-    
-    
-    // StadiumPostに対するリレーション
-    //「1対多」の関係なので'stadium_posts'と複数形に
-    public function stadium_posts()   
-    {
-        return $this->hasMany('App\StadiumPost');  
-    }
-    
-    
-    // マイページにて、ユーザーのトークを取得する処理
+    // マイページにて、トークを取得
     public function getOwnPaginateByLimit(int $limit_count = 20)
     {
         return $this->talks()->orderBy('created_at', 'DESC')->paginate($limit_count);

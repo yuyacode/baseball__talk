@@ -1,4 +1,4 @@
-<!-- 球団トークの詳細画面（トーク画面）-->
+<!-- 球団トークの詳細 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -13,39 +13,40 @@
     <body>
         @section('content')
         <div class="container">
-            <!-- 球団名表示 -->
-            <h2>トークテーマ「{{ $team_talk->title }}」</h2>
-            <!--トークに属する投稿を取得-->
-            @foreach($own_posts as $post)
+            <!-- 球団名 -->
+            <p>{{ $team_talk->title }}</p>
+            <!-- トークの投稿を取得 -->
             <div>
+                @foreach($own_posts as $post)
                 <p>{{ $post->body }}</p>
                 <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
                 @if(Auth::user()->id === $post->user_id)
-                <form action="/team_posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                     @csrf
                     @method('DELETE')
                     <button type="submit">削除</button> 
                 </form>
                 @endif
+                @endforeach
             </div>
-            @endforeach
             <!-- ページネーション -->
             <div class='paginate'>
                 {{ $own_posts->links() }}
             </div>
             <!-- ユーザーの投稿作成箇所 -->
-            <form action="/team_posts" method="POST">
+            <form action="/posts" method="POST">
                 @csrf
-                <div class="create_team_post">
-                    <input type="hidden" name="team_post[team_talk_id]" value="{{ $team_talk->id }}" />
-                    <textarea name="team_post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('team_post.body') }}</textarea>
-                    <p class="body_error" style="color:red">{{ $errors->first('team_post.body') }}</p>
+                <div class="create_post">
+                    <input type="hidden" name="post[talk_id]" value="{{ $team_talk->id }}" />
+                    <input type="hidden" name="post[kinds]" value="team" />
+                    <textarea name="post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('post.body') }}</textarea>
+                    <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>
                 <input type="submit" value="送信"/>
             </form>
-            <!-- 球団一覧画面へのリンク -->
-            <p><a href="/team_talks">球団選択ページへ</a></p>
+            <!-- 球団トークの一覧へ -->
+            <p><a href="/team_talks">球団トーク一覧へ</a></p>
         </div>
         @endsection
     </body>

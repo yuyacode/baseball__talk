@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 class TeamTalksController extends Controller
 {
-    // 球団のトーク一覧画面にて、球団一覧（トークテーマ一覧）を表示するための処理
+    // 球団トーク一覧画面を表示
     public function index(TeamTalk $team_talk)
     {
         return view('team_talks/index')->with(['team_talks' => $team_talk->get()]);  
     }
     
-    // 球団のトーク詳細画面を表示するための処理
+    // 球団トーク詳細画面を表示
     public function show(TeamTalk $team_talk)
     {
         return view('team_talks/show')->with([

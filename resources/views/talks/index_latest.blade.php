@@ -1,4 +1,4 @@
-<!--最新のトークの一覧ページ-->
+<!-- 最新のトーク一覧 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -14,13 +14,13 @@
         @section('content')
         <div class="container">
             <!-- 最新のトーク一覧 -->
-            <h1>最新のトーク一覧</h1>
+            <p>最新のトーク一覧</p>
             <div class="talks">
                 @foreach($talks as $talk)
-                    <div class="talk">
-                        <h2 class="talk--title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
-                        <p class="talk--created_at">{{ $talk->created_at }}</p>
-                    </div>
+                <div class="talk">
+                    <h2 class="talk--title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
+                    <p class="talk--created_at">{{ $talk->created_at }}</p>
+                </div>
                 @endforeach
             </div>
             <!-- ページネーション -->
