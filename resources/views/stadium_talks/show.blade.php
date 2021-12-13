@@ -1,4 +1,4 @@
-<!-- 球場情報のトーク詳細画面（トーク画面）-->
+<!-- 球場情報の詳細 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -14,30 +14,38 @@
         @section('content')
         <div class="container">
             <!-- 球場名表示 -->
-            <h2>トークテーマ「{{ $stadium_talk->title }}」</h2>
-            <!--トークに属する投稿を取得-->
-            @foreach($own_posts as $post)
+            <p>{{ $stadium_talk->title }}</p>
+            <!-- トークの投稿を取得 -->
             <div>
+                @foreach($own_posts as $post)
                 <p>{{ $post->body }}</p>
                 <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
+                @if(Auth::user()->id === $post->user_id)
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button> 
+                </form>
+                @endif
+                @endforeach
             </div>
-            @endforeach
             <!-- ページネーション -->
             <div class='paginate'>
                 {{ $own_posts->links() }}
             </div>
             <!-- ユーザーの投稿作成箇所 -->
-            <form action="/stadium_posts" method="POST">
+            <form action="/posts" method="POST">
                 @csrf
-                <div class="create_stadium_post">
-                    <input type="hidden" name="stadium_post[stadium_talk_id]" value="{{ $stadium_talk->id }}" />
-                    <textarea name="stadium_post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('stadium_post.body') }}</textarea>
-                    <p class="body_error" style="color:red">{{ $errors->first('stadium_post.body') }}</p>
+                <div class="create_post">
+                    <input type="hidden" name="post[talk_id]" value="{{ $stadium_talk->id }}" />
+                    <input type="hidden" name="post[kinds]" value="stadium" />
+                    <textarea name="post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('post.body') }}</textarea>
+                    <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>
                 <input type="submit" value="送信"/>
             </form>
-            <!-- 球場一覧画面へのリンク -->
+            <!-- 球場情報一覧へ -->
             <p><a href="/stadium_talks">球場選択ページへ</a></p>
         </div>
         @endsection

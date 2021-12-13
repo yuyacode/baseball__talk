@@ -11,9 +11,17 @@ class Post extends Model
 
     protected $fillable = [
         'talk_id',
+        'kinds',
         'body',
         'user_id'
     ];
+    
+    // Userに対するリレーション
+    //「1対多」の関係なので単数系に
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     // Talkに対するリレーション
     //「1対多」の関係なので単数系に
@@ -22,11 +30,18 @@ class Post extends Model
         return $this->belongsTo('App\Talk');
     }
     
-    // Userに対するリレーション
+    // TeamTalkに対するリレーション
     //「1対多」の関係なので単数系に
-    public function user()
+    public function team_talk()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\TeamTalk');
+    }
+    
+    // StadiumTalkに対するリレーション
+    //「1対多」の関係なので単数系に
+    public function stadium_talk()
+    {
+        return $this->belongsTo('App\StadiumTalk');
     }
 
 }

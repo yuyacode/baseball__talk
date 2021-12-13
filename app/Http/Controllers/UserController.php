@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     
-    // アクセスが来たマイページにて、そのユーザーのトークを取得する処理
+    // マイページにて、そのユーザーのトークを取得
     public function index(User $user)
     {
         return view('mypage/index')->with(['own_talks' => $user->getOwnPaginateByLimit()]);

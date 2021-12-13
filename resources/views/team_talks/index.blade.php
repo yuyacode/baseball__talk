@@ -1,4 +1,4 @@
-<!-- 球団トークの一覧ページ -->
+<!-- 球団トーク一覧 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -14,13 +14,13 @@
         @section('content')
         <div class="container">
             <!-- 球団のトーク一覧 -->
-            <h2>球団のトーク一覧</h2>
+            <p>球団のトーク</p>
             <p>球団を選ぶ</p>
             <div class="team_talks">
                 @foreach($team_talks as $team_talk)
-                    <div class="team_talk">
-                        <p class="team_talk--title"><a href="/team_talks/{{ $team_talk->id }}">{{ $team_talk->title }}</a></p>
-                    </div>
+                <div class="team_talk">
+                    <p class="team_talk--title"><a href="/team_talks/{{ $team_talk->id }}">{{ $team_talk->title }}</a></p>
+                </div>
                 @endforeach
             </div>
         </div>

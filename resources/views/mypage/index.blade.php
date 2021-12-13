@@ -12,27 +12,25 @@
     </head>
     <body>
         @section('content')
-        <!--内容-->
         <div class="container">
             <p>マイページ</p>
             <div class="own_talks">
                 @foreach($own_talks as $talk)
-                <div>
-                    <p><a href="/talks/{{$talk->id}}">{{ $talk->title }}</a></p>
-                    <p>投稿数：{{ $talk->posts_number }}</p>
-                    <p>{{ $talk->created_at }}</p>
-                    @if(Auth::user()->id === $talk->user_id)
-                    <form action="/talks/{{ $talk->id }}" id="form_{{ $talk->id }}" method="post" style="display:inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">削除</button> 
-                    </form>
-                    @endif
-                </div>
+                <p><a href="/talks/{{$talk->id}}">{{ $talk->title }}</a></p>
+                <p>投稿数：{{ $talk->posts_number }}</p>
+                <p>{{ $talk->created_at }}</p>
+                @if(Auth::user()->id === $talk->user_id)
+                <form action="/talks/{{ $talk->id }}" id="form_{{ $talk->id }}" method="post" style="display:inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">削除</button> 
+                </form>
+                @endif
                 @endforeach
-                <div class='paginate'>
-                    {{ $own_talks->links() }}
-                </div>
+            </div>
+            <!-- ページネーション -->
+            <div class='paginate'>
+                {{ $own_talks->links() }}
             </div>
         </div>
         @endsection

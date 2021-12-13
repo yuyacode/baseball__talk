@@ -44,20 +44,11 @@ Route::group(['middleware' => 'auth'], function(){
     // 球団のトーク一覧画面から、詳細画面へ
     Route::get('/team_talks/{team_talk}', 'TeamTalksController@show');
 
-    // ユーザーが球団トークにて、新規投稿を作成
-    Route::post('/team_posts', 'TeamPostsController@store');
-    
-    // ユーザーが球団トークにて、投稿を削除
-    Route::delete('/team_posts/{post}', 'TeamPostsController@destroy');
-
-    // TOPページにて、スタジアムトーク（球場情報）を選択
+    // TOPページにて、球場情報を選択
     Route::get('/stadium_talks', 'StadiumTalksController@index');
 
     // 球場情報の一覧画面から、詳細画面へ
     Route::get('/stadium_talks/{stadium_talk}', 'StadiumTalksController@show');
-
-    // ユーザーがスタジアムトーク（球場情報）にて、新規投稿を作成
-    Route::post('/stadium_posts', 'StadiumPostsController@store');
     
     // マイページへアクセス
     Route::get('/mypage/{user}', 'UserController@index');
