@@ -1,4 +1,4 @@
-<!-- 球団トークの詳細 -->
+<!-- 球場情報の詳細 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -13,8 +13,8 @@
     <body>
         @section('content')
         <div class="container">
-            <!-- 球団名 -->
-            <p>{{ $team_talk->title }}</p>
+            <!-- 球場名表示 -->
+            <p>{{ $stadium->title }}</p>
             <!-- トークの投稿を取得 -->
             <div>
                 @foreach($own_posts as $post)
@@ -38,15 +38,15 @@
             <form action="/posts" method="POST">
                 @csrf
                 <div class="create_post">
-                    <input type="hidden" name="post[talk_id]" value="{{ $team_talk->id }}" />
-                    <input type="hidden" name="post[kinds]" value="team" />
+                    <input type="hidden" name="post[talk_id]" value="{{ $stadium->id }}" />
+                    <input type="hidden" name="post[kinds]" value="stadium" />
                     <textarea name="post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('post.body') }}</textarea>
                     <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>
                 <input type="submit" value="送信"/>
             </form>
-            <!-- 球団トークの一覧へ -->
-            <p><a href="/team_talks">球団トーク一覧へ</a></p>
+            <!-- 球場情報一覧へ -->
+            <p><a href="/stadiums">球場選択ページへ</a></p>
         </div>
         @endsection
     </body>

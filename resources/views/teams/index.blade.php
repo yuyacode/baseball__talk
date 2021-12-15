@@ -16,10 +16,10 @@
             <!-- 球団のトーク一覧 -->
             <p>球団のトーク</p>
             <p>球団を選ぶ</p>
-            <div class="team_talks">
-                @foreach($team_talks as $team_talk)
-                <div class="team_talk">
-                    <p class="team_talk--title"><a href="/team_talks/{{ $team_talk->id }}">{{ $team_talk->title }}</a></p>
+            <div class="teams">
+                @foreach($teams as $team)
+                <div class="team">
+                    <p class="team-title"><a href="/teams/{{ $team->id }}">{{ $team->title }}</a></p>
                 </div>
                 @endforeach
             </div>

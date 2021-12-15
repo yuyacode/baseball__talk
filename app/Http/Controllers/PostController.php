@@ -23,9 +23,9 @@ class PostController extends Controller
             $belong_to_talk->save();
             return redirect('/talks/'.$post->talk_id);
         } elseif ($post->kinds == 'team') {
-            return redirect('/team_talks/'.$post->talk_id);
+            return redirect('/teams/'.$post->talk_id);
         } else {
-            return redirect('/stadium_talks/'.$post->talk_id);
+            return redirect('/stadiums/'.$post->talk_id);
         }
     }
     
@@ -43,9 +43,9 @@ class PostController extends Controller
             $belong_to_talk->save();
             return redirect('/talks/'.$post->talk_id);
         } elseif ($post->kinds == 'team') {
-            return redirect('/team_talks/'.$post->talk_id);
+            return redirect('/teams/'.$post->talk_id);
         } else {
-            return redirect('/stadium_talks/'.$post->talk_id);
+            return redirect('/stadiums/'.$post->talk_id);
         }
     }
 
