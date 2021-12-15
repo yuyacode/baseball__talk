@@ -56,7 +56,7 @@ class User extends Authenticatable
     
     
     // マイページにて、トークを取得
-    public function getOwnPaginateByLimit(int $limit_count = 20)
+    public function getPaginateByLimit(int $limit_count = 20)
     {
         return $this->talks()->orderBy('created_at', 'DESC')->paginate($limit_count);
     }

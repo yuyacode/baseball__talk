@@ -16,7 +16,7 @@ class Stadium extends Model
     }
     
     // 球場情報の投稿を取得
-    public function getOwnPostsByLimit(int $limit_count = 500)
+    public function getPaginateByLimit(int $limit_count = 500)
     {
         return $this->posts()->orderBy('created_at', 'ASC')->paginate($limit_count);
     }

@@ -14,8 +14,8 @@
         @section('content')
         <div class="container">
             <p>マイページ</p>
-            <div class="own_talks">
-                @foreach($own_talks as $talk)
+            <div class="talks">
+                @foreach($talks as $talk)
                 <p><a href="/talks/{{$talk->id}}">{{ $talk->title }}</a></p>
                 <p>投稿数：{{ $talk->posts_number }}</p>
                 <p>{{ $talk->created_at }}</p>
@@ -30,7 +30,7 @@
             </div>
             <!-- ページネーション -->
             <div class='paginate'>
-                {{ $own_talks->links() }}
+                {{ $talks->links() }}
             </div>
         </div>
         @endsection

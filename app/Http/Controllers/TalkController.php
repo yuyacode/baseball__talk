@@ -14,8 +14,8 @@ class TalkController extends Controller
     public function index(Talk $talk)
     {
         return view('index')->with([
-            'talks_popular' => $talk->getTalksByLimit_popular(),
-            'talks_latest' => $talk->getTalksByLimit_latest()
+            'talks_popular' => $talk->getPopularTalksByLimit(),
+            'talks_latest' => $talk->getLatestTalksByLimit()
         ]);
     }
 
@@ -38,7 +38,7 @@ class TalkController extends Controller
     public function show(Talk $talk)
     {
         return view('talks/show')->with([
-            'own_posts' => $talk->getOwnPostsByLimit(),
+            'posts' => $talk->getPaginateByLimit(),
             'talk' => $talk
         ]);
     }

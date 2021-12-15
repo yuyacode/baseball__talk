@@ -11,6 +11,6 @@ class UserController extends Controller
     // マイページにて、そのユーザーのトークを取得
     public function index(User $user)
     {
-        return view('mypage/index')->with(['own_talks' => $user->getOwnPaginateByLimit()]);
+        return view('mypage/index')->with(['talks' => $user->getPaginateByLimit()]);
     }
 }

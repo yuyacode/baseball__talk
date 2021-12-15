@@ -18,7 +18,7 @@ class StadiumController extends Controller
     public function show(Stadium $stadium)
     {
         return view('stadiums/show')->with([
-            'own_posts' => $stadium->getOwnPostsByLimit(),
+            'posts' => $stadium->getPaginateByLimit(),
             'stadium' => $stadium
         ]);
     }
