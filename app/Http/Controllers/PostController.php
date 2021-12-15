@@ -16,11 +16,11 @@ class PostController extends Controller
         $input += ['user_id' => $request->user()->id];
         $post->fill($input)->save();
         if ($post->kinds == 'general') {
-            $belong_to_talk = Talk::find($post->talk_id);
-            $current_posts_number = $belong_to_talk['posts_number'];
+            $current_talk = Talk::find($post->talk_id);
+            $current_posts_number = $current_talk['posts_number'];
             $current_posts_number += 1;
-            $belong_to_talk->posts_number = $current_posts_number;
-            $belong_to_talk->save();
+            $current_talk->posts_number = $current_posts_number;
+            $current_talk->save();
             return redirect('/talks/'.$post->talk_id);
         } elseif ($post->kinds == 'team') {
             return redirect('/teams/'.$post->talk_id);
@@ -36,11 +36,11 @@ class PostController extends Controller
         $this->authorize('delete', $post);
         $post->delete();
         if ($post->kinds == 'general') {
-            $belong_to_talk = Talk::find($post->talk_id);
-            $current_posts_number = $belong_to_talk['posts_number'];
+            $current_talk = Talk::find($post->talk_id);
+            $current_posts_number = $current_talk['posts_number'];
             $current_posts_number -= 1;
-            $belong_to_talk->posts_number = $current_posts_number;
-            $belong_to_talk->save();
+            $current_talk->posts_number = $current_posts_number;
+            $current_talk->save();
             return redirect('/talks/'.$post->talk_id);
         } elseif ($post->kinds == 'team') {
             return redirect('/teams/'.$post->talk_id);

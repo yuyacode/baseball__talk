@@ -17,7 +17,7 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         return view('teams/show')->with([
-            'own_posts' => $team->getOwnPostsByLimit(),
+            'posts' => $team->getPaginateByLimit(),
             'team' => $team
         ]);
     }

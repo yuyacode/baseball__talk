@@ -17,7 +17,7 @@
             <p>{{ $team->title }}</p>
             <!-- トークの投稿を取得 -->
             <div>
-                @foreach($own_posts as $post)
+                @foreach($posts as $post)
                 <p>{{ $post->body }}</p>
                 <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
@@ -32,7 +32,7 @@
             </div>
             <!-- ページネーション -->
             <div class='paginate'>
-                {{ $own_posts->links() }}
+                {{ $posts->links() }}
             </div>
             <!-- ユーザーの投稿作成箇所 -->
             <form action="/posts" method="POST">

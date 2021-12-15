@@ -32,7 +32,7 @@ class Talk extends Model
 
 
     // TOPページにて、人気のトークを5件表示
-    public function getTalksByLimit_popular(int $limit_count = 5)
+    public function getPopularTalksByLimit(int $limit_count = 5)
     {
         $sevendays = Carbon::today()->subDay(7);
         return $talks_popular = Talk::whereDate('created_at', '>=', $sevendays)->orderBy('posts_number', 'DESC')->limit($limit_count)->get();
@@ -40,7 +40,7 @@ class Talk extends Model
 
 
     // TOPページにて、最新のトークを5件表示
-    public function getTalksByLimit_latest(int $limit_count = 5)
+    public function getLatestTalksByLimit(int $limit_count = 5)
     {
         return $this->orderBy('created_at', 'DESC')->limit($limit_count)->get();
     }
@@ -62,7 +62,7 @@ class Talk extends Model
 
 
     // トークの投稿を、作成日時の昇順で500件取得
-    public function getOwnPostsByLimit(int $limit_count = 500)
+    public function getPaginateByLimit(int $limit_count = 500)
     {
         return $this->posts()->orderBy('created_at', 'ASC')->paginate($limit_count);
     }
