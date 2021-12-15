@@ -16,10 +16,10 @@
             <!-- 球場情報一覧 -->
             <p>球場情報</p>
             <p>球場を選ぶ</p>
-            <div class="stadium_talks">
-                @foreach($stadium_talks as $stadium_talk)
-                <div class="stadium_talk">
-                    <p class="stadium_talk--title"><a href="/stadium_talks/{{ $stadium_talk->id }}">{{ $stadium_talk->title }}</a></p>
+            <div class="stadiums">
+                @foreach($stadiums as $stadium)
+                <div class="stadium">
+                    <p class="stadium-title"><a href="/stadiums/{{ $stadium->id }}">{{ $stadium->title }}</a></p>
                 </div>
                 @endforeach
             </div>

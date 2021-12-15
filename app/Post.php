@@ -30,18 +30,18 @@ class Post extends Model
         return $this->belongsTo('App\Talk');
     }
     
-    // TeamTalkに対するリレーション
+    // Teamに対するリレーション
     //「1対多」の関係なので単数系に
-    public function team_talk()
+    public function team()
     {
-        return $this->belongsTo('App\TeamTalk');
+        return $this->belongsTo('App\Team');
     }
     
-    // StadiumTalkに対するリレーション
+    // Stadiumに対するリレーション
     //「1対多」の関係なので単数系に
-    public function stadium_talk()
+    public function stadium()
     {
-        return $this->belongsTo('App\StadiumTalk');
+        return $this->belongsTo('App\Stadium');
     }
 
 }

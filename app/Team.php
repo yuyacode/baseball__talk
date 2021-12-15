@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class TeamTalk extends Model
+class Team extends Model
 {
+    protected $table = 'teams';
 
     // Postに対するリレーション
     //「1対多」の関係なので'posts'と複数形に

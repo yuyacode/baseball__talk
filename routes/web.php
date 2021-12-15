@@ -39,16 +39,16 @@ Route::group(['middleware' => 'auth'], function(){
     Route::delete('/talks/{talk}', 'TalkController@destroy');
 
     // TOPページにて、球団トークを選択
-    Route::get('/team_talks', 'TeamTalksController@index');
+    Route::get('/teams', 'TeamController@index');
 
     // 球団のトーク一覧画面から、詳細画面へ
-    Route::get('/team_talks/{team_talk}', 'TeamTalksController@show');
+    Route::get('/teams/{team}', 'TeamController@show');
 
     // TOPページにて、球場情報を選択
-    Route::get('/stadium_talks', 'StadiumTalksController@index');
+    Route::get('/stadiums', 'StadiumController@index');
 
     // 球場情報の一覧画面から、詳細画面へ
-    Route::get('/stadium_talks/{stadium_talk}', 'StadiumTalksController@show');
+    Route::get('/stadiums/{stadium}', 'StadiumController@show');
     
     // マイページへアクセス
     Route::get('/mypage/{user}', 'UserController@index');
