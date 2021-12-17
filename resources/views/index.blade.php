@@ -16,23 +16,23 @@
             <!-- 画面左側 -->
             <div class="wrapper-left">
                 <!-- 人気のトーク -->
-                <div class="top_talks--popular">
+                <div class="popular_talks">
                     <h2>人気のトーク</h2>
-                    <div class="talk_popular">
-                        @foreach($talks_popular as $talk_popular)
-                        <h2 class="talk_popular--title"><a href="talks/{{ $talk_popular->id }}">{{ $talk_popular->title }}</a></h2>
-                        <p class="talk_popular--created_at">{{ $talk_popular->created_at }}</p>
+                    <div class="popular_talk">
+                        @foreach($popular_talks as $popular_talk)
+                        <h2 class="popular_talk--title"><a href="talks/{{ $popular_talk->id }}">{{ $popular_talk->title }}</a></h2>
+                        <p class="popular_talk--created_at">{{ $popular_talk->created_at }}</p>
                         @endforeach
                     </div>
                     <p><a href="/talks_popular">一覧へ</a></p>
                 </div>
                 <!-- 最新のトーク -->
-                <div class="top_talks--latest">
+                <div class="latest_talks">
                     <h2>最新のトーク</h2>
-                    <div class="talk_latest">
-                        @foreach($talks_latest as $talk_latest)
-                        <h2 class="talk_latest--title"><a href="talks/{{ $talk_latest->id }}">{{ $talk_latest->title }}</a></h2>
-                        <p class="talk_latest--created_at">{{ $talk_latest->created_at }}</p>
+                    <div class="latest_talk">
+                        @foreach($latest_talks as $latest_talk)
+                        <h2 class="latest_talk--title"><a href="talks/{{ $latest_talk->id }}">{{ $latest_talk->title }}</a></h2>
+                        <p class="latest_talk--created_at">{{ $latest_talk->created_at }}</p>
                         @endforeach
                     </div>
                     <p><a href="/talks_latest">一覧へ</a></p>
@@ -46,7 +46,9 @@
             </div>
             <!-- 画面右側 -->
             <div class="wrapper-right">
-                <!-- ユーザーのトーク作成箇所 -->
+                <!-- マイページ -->
+                <p><a href="/mypage/{{ Auth::user()->id }}">マイページへ</a></p>
+                <!-- トーク作成箇所 -->
                 <div class="create_talk">
                     <form action="/talks" method="POST">
                         @csrf

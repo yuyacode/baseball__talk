@@ -52,6 +52,12 @@ Route::group(['middleware' => 'auth'], function(){
     
     // マイページへアクセス
     Route::get('/mypage/{user}', 'UserController@index');
+    
+    // マイページの編集画面へアクセス
+    Route::get('/mypage/{user}/edit', 'UserController@edit');
+    
+    // マイページを編集（ユーザー情報を更新）
+    Route::put('/mypage/{user}', 'UserController@update');
 
 });
 

@@ -40,7 +40,7 @@
                 <div class="create_post">
                     <input type="hidden" name="post[talk_id]" value="{{ $team->id }}" />
                     <input type="hidden" name="post[kinds]" value="team" />
-                    <textarea name="post[body]" placeholder="投稿を作成する（最大100文字）">{{ old('post.body') }}</textarea>
+                    <textarea name="post[body]" placeholder="投稿を作成する（最大250文字）">{{ old('post.body') }}</textarea>
                     <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
                 </div>
                 <input type="submit" value="送信"/>
