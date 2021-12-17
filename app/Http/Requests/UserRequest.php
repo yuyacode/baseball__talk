@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TalkRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,7 +26,8 @@ class TalkRequest extends FormRequest
     public function rules()
     {
         return [
-            'talk.title' => 'required|string|max:100',
+            'user.name' => 'required|string|max:255',
+            'user.profile' => 'max:200',
         ];
     }
 }

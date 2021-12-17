@@ -14,8 +14,8 @@ class TalkController extends Controller
     public function index(Talk $talk)
     {
         return view('index')->with([
-            'talks_popular' => $talk->getPopularTalksByLimit(),
-            'talks_latest' => $talk->getLatestTalksByLimit()
+            'popular_talks' => $talk->getPopularTalksByLimit(),
+            'latest_talks' => $talk->getLatestTalksByLimit()
         ]);
     }
 

@@ -14,7 +14,34 @@
         @section('content')
         <div class="container">
             <p>マイページ</p>
+            <!-- 名前 -->
+            <p>{{ $user->name }}</p>
+            <!-- 登録日時 -->
+            <p>（登録日時：{{ $user->created_at }}）</p>
+            <!-- 自分のマイページのみ表示 -->
+            @if(Auth::user()->id === $user->id)
+            <div>
+                <!-- マイページ編集ボタン -->
+                <p><a href="/mypage/{{ $user->id }}/edit">編集</a></p>
+                <!-- トーク作成箇所 -->
+                <form action="/talks" method="POST">
+                    @csrf
+                    <p>トークテーマを作成</p>
+                    <input type="text" name="talk[title]" value="{{ old('talk.title') }}" />
+                    <p class="title_error" style="color:red">{{ $errors->first('talk.title') }}</p>
+                    <input type="submit" value="作成"/>
+                </form>
+            </div>
+            @endif
+            <!-- 好きな球団 -->
+            <p>好きな球団：</p>
+            <!-- プロフィール -->
+            @if(isset($user->profile))
+            <p>{{ $user->profile }}</p>
+            @endif
+            <!-- トーク一覧 -->
             <div class="talks">
+                <p>トーク一覧</p>
                 @foreach($talks as $talk)
                 <p><a href="/talks/{{$talk->id}}">{{ $talk->title }}</a></p>
                 <p>投稿数：{{ $talk->posts_number }}</p>
