@@ -12,7 +12,7 @@ class TeamTalksTableSeeder extends Seeder
     public function run()
     {
 
-        DB::table('team_talks')->insert([
+        DB::table('teams')->insert([
             [
                 'title' => '東京ヤクルトスワローズ',
                 'created_at' => new DateTime(),

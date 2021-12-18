@@ -11,7 +11,7 @@ class StadiumTalksTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('stadium_talks')->insert([
+        DB::table('stadiums')->insert([
             [
                 'title' => '明治神宮野球場',
                 'created_at' => new DateTime(),
