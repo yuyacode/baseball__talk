@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Auth;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'profile', 'team_id',
     ];
 
     /**
@@ -36,4 +37,35 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    
+    // Talkに対するリレーション
+    //「1対多」の関係なので'talks'と複数形に
+    public function talks()   
+    {
+        return $this->hasMany('App\Talk');  
+    }
+    
+    // Teamに対するリレーション
+    //「1対多」の関係なので単数系に
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
+    }
+    
+    
+    // Postに対するリレーション
+    //「1対多」の関係なので'posts'と複数形に
+    public function posts()   
+    {
+        return $this->hasMany('App\Post');  
+    }
+    
+    
+    // マイページにて、トークを取得
+    public function getPaginateByLimit(int $limit_count = 20)
+    {
+        return $this->talks()->orderBy('created_at', 'DESC')->paginate($limit_count);
+    }
+    
 }
