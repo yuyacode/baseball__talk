@@ -34,7 +34,9 @@
             </div>
             @endif
             <!-- 好きな球団 -->
-            <p>好きな球団：</p>
+            @if(isset($user->team_id))
+            <p>好きな球団：<a href="/teams/{{ $user->team->id }}">{{ $user->team->title }}</a></p>
+            @endif
             <!-- プロフィール -->
             @if(isset($user->profile))
             <p>{{ $user->profile }}</p>

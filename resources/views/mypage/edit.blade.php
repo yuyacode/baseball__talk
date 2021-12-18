@@ -25,6 +25,15 @@
                         <p class="error" style="color:red">{{ $errors->first('user.name') }}</p>
                     </div>
                     <div>
+                        <p>好きな球団</p>
+                        <select name="user[team_id]">
+                            <option value="">未選択</option>
+                            @foreach($teams as $team)
+                            <option value="{{ $team->id }}" @if($user->team_id == $team->id) selected @endif>{{ $team->title }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div>
                         <p>プロフィール（自己紹介）</p>
                         <textarea name="user[profile]" placeholder="プロフィール（自己紹介）を追加する（最大200文字）">{{ $user->profile }}</textarea>
                         <p class="error" style="color:red">{{ $errors->first('user.profile') }}</p>
