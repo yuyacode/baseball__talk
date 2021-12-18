@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Team extends Model
 {
     protected $table = 'teams';
+    
+    // Userに対するリレーション
+    //「1対多」の関係なので'users'と複数形に
+    public function users()   
+    {
+        return $this->hasMany('App\User');  
+    }
 
     // Postに対するリレーション
     //「1対多」の関係なので'posts'と複数形に

@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'profile',
+        'name', 'email', 'password', 'profile', 'team_id',
     ];
 
     /**
@@ -44,6 +44,13 @@ class User extends Authenticatable
     public function talks()   
     {
         return $this->hasMany('App\Talk');  
+    }
+    
+    // Teamに対するリレーション
+    //「1対多」の関係なので単数系に
+    public function team()
+    {
+        return $this->belongsTo('App\Team');
     }
     
     

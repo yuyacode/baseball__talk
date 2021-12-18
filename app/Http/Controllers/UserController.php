@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Team;
 use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
@@ -18,9 +19,12 @@ class UserController extends Controller
     }
     
     // マイページの編集画面へ遷移
-    public function edit(User $user)
+    public function edit(User $user, Team $team)
     {
-        return view('mypage/edit')->with(['user' => $user]);
+        return view('mypage/edit')->with([
+            'user' => $user,
+            'teams' => $team->get()
+        ]);
     }
     
     // マイページを編集（ユーザー情報を更新）
