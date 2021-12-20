@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
-        <!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">-->
-        <!--<link href="{{secure_asset('/assets/〇〇')}}" rel="stylesheet">-->
     </head>
     <body>
         @section('content')
