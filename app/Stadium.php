@@ -14,7 +14,7 @@ class Stadium extends Model
     {
         return $this->hasMany('App\Post', 'talk_id');
     }
-    
+
     // 球場情報の投稿を取得
     public function getPaginateByLimit(int $limit_count = 500)
     {
