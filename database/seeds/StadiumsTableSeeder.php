@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class TeamTalksTableSeeder extends Seeder
+class StadiumsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,69 +11,67 @@ class TeamTalksTableSeeder extends Seeder
      */
     public function run()
     {
-
-        DB::table('team_talks')->insert([
+        DB::table('stadiums')->insert([
             [
-                'title' => '東京ヤクルトスワローズ',
+                'title' => '明治神宮野球場',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '阪神タイガース',
+                'title' => '阪神甲子園球場',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '読売ジャイアンツ',
+                'title' => '東京ドーム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '広島東洋カープ',
+                'title' => 'MAZDA Zoom-Zoom スタジアム広島',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '中日ドラゴンズ',
+                'title' => 'バンテリンドーム ナゴヤ',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '横浜DeNAベイスターズ',
+                'title' => '横浜スタジアム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => 'オリックスバファローズ',
+                'title' => '京セラドーム大阪',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '千葉ロッテマリーンズ',
+                'title' => 'ZOZOマリンスタジアム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '東北楽天ゴールデンイーグルス',
+                'title' => '楽天生命パーク宮城',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '福岡ソフトバンクホークス',
+                'title' => '福岡PayPayドーム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '北海道日本ハムファイターズ',
+                'title' => '札幌ドーム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
             [
-                'title' => '埼玉西武ライオンズ',
+                'title' => 'メットライフドーム',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
             ],
         ]);
-
     }
 }

@@ -15,7 +15,8 @@ class CreateTalksTable extends Migration
     {
         Schema::create('talks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title', 50);
+            $table->bigInteger('user_id')->unsigned();
+            $table->string('title', 100);
             $table->integer('posts_number')->default(0);
             $table->timestamp('created_at')->nullable(false)->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->nullable(false)->default(DB::raw('CURRENT_TIMESTAMP'));
