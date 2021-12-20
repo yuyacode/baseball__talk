@@ -10,7 +10,7 @@ class Stadium extends Model
 
     // Postに対するリレーション
     //「1対多」の関係なので'posts'と複数形に
-    public function posts()   
+    public function posts()
     {
         return $this->hasMany('App\Post', 'talk_id');
     }

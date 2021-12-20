@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamTalksTable extends Migration
+class CreateStadiumsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTeamTalksTable extends Migration
      */
     public function up()
     {
-        Schema::create('team_talks', function (Blueprint $table) {
+        Schema::create('stadiums', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 50);
             $table->timestamp('created_at')->nullable(false)->default(DB::raw('CURRENT_TIMESTAMP'));
@@ -29,6 +29,6 @@ class CreateTeamTalksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team_talks');
+        Schema::dropIfExists('stadiums');
     }
 }
