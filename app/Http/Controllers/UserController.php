@@ -21,6 +21,7 @@ class UserController extends Controller
     // マイページの編集画面へ遷移
     public function edit(User $user, Team $team)
     {
+        $this->authorize('update', $user);
         return view('mypage/edit')->with([
             'user' => $user,
             'teams' => $team->get()
