@@ -16,9 +16,15 @@ Route::group(['middleware' => 'auth'], function(){
 
     // TOPページにリクエストが来た際、人気と最新のトークを5件表示する処理
     Route::get('/', 'TalkController@index');
+    
+    // 今月の人気のトーク一覧画面「/talks_popular_month」にリクエストが来た場合
+    Route::get('/talks_popular_month', 'TalkController@index_popular_month');
 
-    // 人気のトーク一覧画面「/talks_popular」にリクエストが来た場合
-    Route::get('/talks_popular', 'TalkController@index_popular');
+    // 今週の人気のトーク一覧画面「/talks_popular_week」にリクエストが来た場合
+    Route::get('/talks_popular_week', 'TalkController@index_popular_week');
+    
+    // 今日の人気のトーク一覧画面「/talks_popular_today」にリクエストが来た場合
+    Route::get('/talks_popular_today', 'TalkController@index_popular_today');
 
     // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
     Route::get('/talks_latest', 'TalkController@index_latest');

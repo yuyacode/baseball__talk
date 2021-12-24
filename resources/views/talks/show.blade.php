@@ -46,7 +46,7 @@
                 <input type="submit" value="送信"/>
             </form>
             <!-- トーク一覧へ -->
-            <p><a href="/talks_popular">「人気のトーク」一覧へ</a></p>
+            <p><a href="/talks_popular_week">「人気のトーク（今週）」一覧へ</a></p>
             <p><a href="/talks_latest">「最新のトーク」一覧へ</a></p>
         </div>
         @endsection

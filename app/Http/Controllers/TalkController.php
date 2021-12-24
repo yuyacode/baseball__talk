@@ -18,12 +18,35 @@ class TalkController extends Controller
             'latest_talks' => $talk->getLatestTalksByLimit()
         ]);
     }
-
-
-    // 人気のトーク一覧画面を表示
-    public function index_popular(Talk $talk)
+    
+    
+    // 今月の人気のトーク一覧画面を表示
+    public function index_popular_month(Talk $talk)
     {
-        return view('talks/index_popular')->with(['talks' => $talk->getPaginateByLimit_popular()]);
+        return view('talks/index_popular')->with([
+            'talks' => $talk->getPaginateByLimit_popular_month(),
+            'term' => '今月'
+        ]);
+    }
+
+
+    // 今週の人気のトーク一覧画面を表示
+    public function index_popular_week(Talk $talk)
+    {
+        return view('talks/index_popular')->with([
+            'talks' => $talk->getPaginateByLimit_popular_week(),
+            'term' => '今週'
+        ]);
+    }
+    
+    
+    // 今日の人気のトーク一覧画面を表示
+    public function index_popular_today(Talk $talk)
+    {
+        return view('talks/index_popular')->with([
+            'talks' => $talk->getPaginateByLimit_popular_today(),
+            'term' => '今日'
+        ]);
     }
     
     

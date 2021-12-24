@@ -13,6 +13,25 @@
         <div class="container">
             <!-- 人気のトーク一覧 -->
             <p>人気のトーク一覧</p>
+            <!-- 対象期間 -->
+            <p>（{{ $term }}）</p>
+            <!-- 期間を指定する -->
+            <div>
+                <p>期間を指定する</p>
+                @if($term == '今月')
+                <p>今月</p>
+                <p><a href="/talks_popular_week">今週</a></p>
+                <p><a href="/talks_popular_today">今日</a></p>
+                @elseif($term == '今週')
+                <p><a href="/talks_popular_month">今月</a></p>
+                <p>今週</p>
+                <p><a href="/talks_popular_today">今日</a></p>
+                @else
+                <p><a href="/talks_popular_month">今月</a></p>
+                <p><a href="/talks_popular_week">今週</a></p>
+                <p>今日</p>
+                @endif
+            </div>
             <div class="talks">
                 @foreach($talks as $talk)
                 <div class="talk">

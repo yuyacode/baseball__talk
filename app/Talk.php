@@ -44,13 +44,28 @@ class Talk extends Model
     {
         return $this->orderBy('created_at', 'DESC')->limit($limit_count)->get();
     }
+    
+    
+    // 今月の人気のトーク一覧を表示
+    public function getPaginateByLimit_popular_month(int $limit_count = 10)
+    {
+        $start_of_month = Carbon::now()->startOfMonth()->toDateString();
+        return $talks_popular = Talk::whereDate('created_at', '>=', $start_of_month)->orderBy('posts_number', 'DESC')->paginate($limit_count);
+    }
 
 
-    // 人気のトークの一覧を表示
-    public function getPaginateByLimit_popular(int $limit_count = 10)
+    // 今週の人気のトーク一覧を表示
+    public function getPaginateByLimit_popular_week(int $limit_count = 10)
     {
         $sevendays = Carbon::today()->subDay(7);
         return $talks_popular = Talk::whereDate('created_at', '>=', $sevendays)->orderBy('posts_number', 'DESC')->paginate($limit_count);
+    }
+    
+    // 今日の人気のトーク一覧を表示
+    public function getPaginateByLimit_popular_today(int $limit_count = 10)
+    {
+        $today = Carbon::today();
+        return $talks_popular = Talk::whereDate('created_at', '>=', $today)->orderBy('posts_number', 'DESC')->paginate($limit_count);
     }
 
 
