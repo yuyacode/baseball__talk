@@ -16,13 +16,14 @@
                 <!-- 人気のトーク -->
                 <div class="popular_talks">
                     <h2>人気のトーク</h2>
+                    <p>（今週）</p>
                     <div class="popular_talk">
                         @foreach($popular_talks as $popular_talk)
                         <h2 class="popular_talk--title"><a href="talks/{{ $popular_talk->id }}">{{ $popular_talk->title }}</a></h2>
                         <p class="popular_talk--created_at">{{ $popular_talk->created_at }}</p>
                         @endforeach
                     </div>
-                    <p><a href="/talks_popular">一覧へ</a></p>
+                    <p><a href="/talks_popular_week">一覧へ</a></p>
                 </div>
                 <!-- 最新のトーク -->
                 <div class="latest_talks">
