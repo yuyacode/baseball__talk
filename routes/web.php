@@ -59,6 +59,9 @@ Route::group(['middleware' => 'auth'], function(){
     // マイページへアクセス
     Route::get('/mypage/{user}', 'UserController@index');
     
+    // マイページにて、プロフィール画像をアップロード
+    Route::post('/mypage/{user}', 'UserController@create');
+    
     // マイページの編集画面へアクセス
     Route::get('/mypage/{user}/edit', 'UserController@edit');
     
