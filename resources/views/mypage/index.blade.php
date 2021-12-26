@@ -16,8 +16,20 @@
             <p>{{ $user->name }}</p>
             <!-- 登録日時 -->
             <p>（登録日時：{{ $user->created_at }}）</p>
+            <!-- プロフィール画像の表示 -->
+            @if($user->profile_image)
+            <!-- 画像を表示 -->
+            <p><img src="{{ $user->profile_image }}" width="100" height="100"></p>
+            @endif
             <!-- 自分のマイページのみ表示 -->
             @if(Auth::user()->id === $user->id)
+            <!-- プロフィール画像のアップロードフォーム -->
+            <form action="/mypage/{{ $user->id }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <input type="file" name="profile_image">
+                <p class="error" style="color:red">{{ $errors->first('profile_image') }}</p>
+                <input type="submit" value="アップロード">
+            </form>
             <div>
                 <!-- マイページ編集ボタン -->
                 <p><a href="/mypage/{{ $user->id }}/edit">編集</a></p>
@@ -26,7 +38,7 @@
                     @csrf
                     <p>トークテーマを作成</p>
                     <input type="text" name="talk[title]" value="{{ old('talk.title') }}" />
-                    <p class="title_error" style="color:red">{{ $errors->first('talk.title') }}</p>
+                    <p class="error" style="color:red">{{ $errors->first('talk.title') }}</p>
                     <input type="submit" value="作成"/>
                 </form>
             </div>
