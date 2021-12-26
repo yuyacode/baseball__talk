@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Team;
 use Storage;
+use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
@@ -20,16 +21,19 @@ class UserController extends Controller
     }
     
     // S3にプロフィール画像をアップロード
-    public function create(UserRequest $request, User $user)
+    public function create(Request $request, User $user)
     {
         $form = $request->all();
         // s3アップロード開始
         $profile_image = $request->file('profile_image');
-        // バケットへアップロード
-        $path = Storage::disk('s3')->putFile('/', $profile_image, 'public');
-        // アップロードした画像のフルパスを取得
-        $user->profile_image = Storage::disk('s3')->url($path);
-        $user->save();
+        if (isset($profile_image))
+        {
+            // バケットへアップロード
+            $path = Storage::disk('s3')->putFile('/', $profile_image, 'public');
+            // アップロードした画像のフルパスを取得
+            $user->profile_image = Storage::disk('s3')->url($path);
+            $user->save();
+        }
         return redirect('/mypage/'.$user->id);
     }
     

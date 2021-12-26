@@ -28,7 +28,6 @@ class UserRequest extends FormRequest
         return [
             'user.name' => 'required|string|max:255',
             'user.profile' => 'max:200',
-            'profile_image' => 'required|file|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];
     }
 }
