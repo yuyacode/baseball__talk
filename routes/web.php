@@ -62,6 +62,9 @@ Route::group(['middleware' => 'auth'], function(){
     // マイページにて、プロフィール画像をアップロード
     Route::post('/mypage/{user}', 'UserController@create');
     
+    // マイページにて、プロフィール画像を削除
+    Route::delete('/mypage/{user}', 'UserController@delete');
+    
     // マイページの編集画面へアクセス
     Route::get('/mypage/{user}/edit', 'UserController@edit');
     

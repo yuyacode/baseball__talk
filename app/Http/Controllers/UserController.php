@@ -34,7 +34,6 @@ class UserController extends Controller
             'profile_image.image' => '画像をアップロードしてください（jpeg, jpg, png）。',
             'profile_image.mimes' => '正しい形式で画像をアップロードしてください（jpeg, jpg, png）。',
         ]);
-
         // リクエストの全データを取得
         $form = $request->all();
         // s3アップロード開始
@@ -43,6 +42,17 @@ class UserController extends Controller
         $path = Storage::disk('s3')->putFile('/', $profile_image, 'public');
         // アップロードした画像のパスを取得
         $user->profile_image = $path;
+        $user->save();
+        return redirect('/mypage/'.$user->id);
+    }
+    
+    
+    // S3とDBから、プロフィール画像を削除
+    public function delete(User $user)
+    {
+        $profile_image = $user->profile_image;
+        $s3_delete = Storage::disk('s3')->delete($profile_image);
+        $user->profile_image = 'NULL';
         $user->save();
         return redirect('/mypage/'.$user->id);
     }

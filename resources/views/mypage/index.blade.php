@@ -29,6 +29,12 @@
                 <p class="error" style="color:red">{{ $errors->first('profile_image') }}</p>
                 <input type="submit" value="アップロード">
             </form>
+            <!-- プロフィール画像の削除フォーム -->
+            <form action="/mypage/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit">削除</button> 
+            </form>
             <div>
                 <!-- マイページ編集ボタン -->
                 <p><a href="/mypage/{{ $user->id }}/edit">編集</a></p>
