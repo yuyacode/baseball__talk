@@ -52,7 +52,7 @@ class UserController extends Controller
     {
         $profile_image = $user->profile_image;
         $s3_delete = Storage::disk('s3')->delete($profile_image);
-        $user->profile_image = 'NULL';
+        $user->profile_image = NULL;
         $user->save();
         return redirect('/mypage/'.$user->id);
     }

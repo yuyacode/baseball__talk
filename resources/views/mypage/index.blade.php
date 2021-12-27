@@ -17,23 +17,25 @@
             <!-- 登録日時 -->
             <p>（登録日時：{{ $user->created_at }}）</p>
             <!-- プロフィール画像の表示 -->
-            @if($user->profile_image)
+            @if(isset($user->profile_image))
             <p><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $user->profile_image }}" width="100" height="100"></p>
+            @else
+            <p><img src="{{ asset('image/noimage.jpeg') }}" width="100" height="100"></p>
             @endif
             <!-- 自分のマイページのみ表示 -->
             @if(Auth::user()->id === $user->id)
+            <!-- プロフィール画像の削除フォーム -->
+            <form action="/mypage/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
+                @csrf
+                @method('DELETE')
+                <button type="submit">削除</button> 
+            </form>
             <!-- プロフィール画像のアップロードフォーム -->
             <form action="/mypage/{{ $user->id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="profile_image">
                 <p class="error" style="color:red">{{ $errors->first('profile_image') }}</p>
                 <input type="submit" value="アップロード">
-            </form>
-            <!-- プロフィール画像の削除フォーム -->
-            <form action="/mypage/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
-                @csrf
-                @method('DELETE')
-                <button type="submit">削除</button> 
             </form>
             <div>
                 <!-- マイページ編集ボタン -->
