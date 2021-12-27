@@ -18,8 +18,7 @@
             <p>（登録日時：{{ $user->created_at }}）</p>
             <!-- プロフィール画像の表示 -->
             @if($user->profile_image)
-            <!-- 画像を表示 -->
-            <p><img src="{{ $user->profile_image }}" width="100" height="100"></p>
+            <p><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $user->profile_image }}" width="100" height="100"></p>
             @endif
             <!-- 自分のマイページのみ表示 -->
             @if(Auth::user()->id === $user->id)
