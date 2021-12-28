@@ -24,12 +24,14 @@
             @endif
             <!-- 自分のマイページのみ表示 -->
             @if(Auth::user()->id === $user->id)
+            @if(isset($user->profile_image))
             <!-- プロフィール画像の削除フォーム -->
             <form action="/mypage/{{ $user->id }}" id="form_{{ $user->id }}" method="post" style="display:inline">
                 @csrf
                 @method('DELETE')
                 <button type="submit">削除</button> 
             </form>
+            @endif
             <!-- プロフィール画像のアップロードフォーム -->
             <form action="/mypage/{{ $user->id }}" method="post" enctype="multipart/form-data">
                 @csrf

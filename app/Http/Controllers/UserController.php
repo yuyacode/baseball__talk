@@ -34,6 +34,11 @@ class UserController extends Controller
             'profile_image.image' => '画像をアップロードしてください（jpeg, jpg, png）。',
             'profile_image.mimes' => '正しい形式で画像をアップロードしてください（jpeg, jpg, png）。',
         ]);
+        // 変更前のプロフィール画像がある場合、S3から削除
+        if (isset($user->profile_image)) {
+            $profile_image__before = $user->profile_image;
+            $s3_delete = Storage::disk('s3')->delete($profile_image__before);
+        }
         // リクエストの全データを取得
         $form = $request->all();
         // s3アップロード開始
