@@ -1,4 +1,4 @@
-<!-- 球場情報の詳細 -->
+<!-- 球場情報の詳細画面 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -7,6 +7,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <?php
+        $location_info = array(
+            "latitude" => $stadium->latitude,
+            "longitude" => $stadium->longitude,
+        );
+        $location_info__json = json_encode( $location_info );
+        ?>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google-map.apikey') }}"></script>
+        <script>
+            var location_info = JSON.parse('<?php echo $location_info__json; ?>');
+            function makeMap(latitude, longitude) {
+                var canvas = document.getElementById('map');
+                var latlng = new google.maps.LatLng(latitude, longitude);
+                var mapOptions = {
+                    zoom: 16.9,
+                    center: latlng,
+                };
+                var map = new google.maps.Map(canvas, mapOptions);
+                return map;
+            };
+            window.onload = function() {
+                makeMap(location_info['latitude'], location_info['longitude']);
+            };
+        </script>
     </head>
     <body>
         @section('content')
@@ -49,6 +74,8 @@
                 </div>
                 <input type="submit" value="送信"/>
             </form>
+            <!-- Google map -->
+            <div id="map"></div>
             <!-- 球場情報一覧へ -->
             <p><a href="/stadiums">球場選択ページへ</a></p>
         </div>
