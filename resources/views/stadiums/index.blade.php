@@ -18,6 +18,7 @@
                 @foreach($stadiums as $stadium)
                 <div class="stadium">
                     <p class="stadium-title"><a href="/stadiums/{{ $stadium->id }}">{{ $stadium->title }}</a></p>
+                    <p>（{{ $stadium->place }}）</p>
                 </div>
                 @endforeach
             </div>

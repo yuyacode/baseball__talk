@@ -21,7 +21,7 @@
                 @if(isset($post->user->profile_image))
                 <p><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}" width="100" height="100"></p>
                 @else
-                <p><img src="{{ asset('image/noimage.jpeg') }}" width="100" height="100"></p>
+                <p><img src="{{ asset('image/noimage.jpg') }}" width="100" height="100"></p>
                 @endif
                 <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                 <p>{{ $post->created_at }}</p>
