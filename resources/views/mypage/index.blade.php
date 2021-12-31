@@ -20,7 +20,7 @@
             @if(isset($user->profile_image))
             <p><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $user->profile_image }}" width="100" height="100"></p>
             @else
-            <p><img src="{{ asset('image/noimage.jpeg') }}" width="100" height="100"></p>
+            <p><img src="{{ asset('image/noimage.jpg') }}" width="100" height="100"></p>
             @endif
             <!-- 自分のマイページのみ表示 -->
             @if(Auth::user()->id === $user->id)

@@ -25,15 +25,7 @@ class UserController extends Controller
     public function create(Request $request, User $user)
     {
         // バリデーション
-        $request->validate([
-            'profile_image' => 'required|file|image|mimes:jpeg,jpg,png',
-        ],
-        [
-            'profile_image.required' => 'ファイルを選択してください。',
-            'profile_image.file' => '正しいファイルを選択してください。',
-            'profile_image.image' => '画像をアップロードしてください（jpeg, jpg, png）。',
-            'profile_image.mimes' => '正しい形式で画像をアップロードしてください（jpeg, jpg, png）。',
-        ]);
+        $request->validate(['profile_image' => 'required|file|image|mimes:jpeg,jpg,png']);
         // 変更前のプロフィール画像がある場合、S3から削除
         if (isset($user->profile_image)) {
             $profile_image__before = $user->profile_image;
