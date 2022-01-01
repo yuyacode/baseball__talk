@@ -7,17 +7,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="body">
         @section('content')
-        <div class="container">
+        <div class="container_talks">
             <!-- 最新のトーク一覧 -->
-            <p>最新のトーク一覧</p>
+            <h2 class="talks_title">最新のトーク一覧</h2>
             <div class="talks">
                 @foreach($talks as $talk)
                 <div class="talk">
-                    <h2 class="talk--title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
-                    <p class="talk--created_at">{{ $talk->created_at }}</p>
+                    <h2 class="talk-title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
+                    <p class="talk-created_at">（{{ $talk->created_at }}）</p>
                 </div>
                 @endforeach
             </div>

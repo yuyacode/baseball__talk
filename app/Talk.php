@@ -79,7 +79,7 @@ class Talk extends Model
     // トークの投稿を、作成日時の昇順で500件取得
     public function getPaginateByLimit(int $limit_count = 500)
     {
-        return $this->posts()->orderBy('created_at', 'ASC')->paginate($limit_count);
+        return $this->posts()->where('kinds', 'general')->orderBy('created_at', 'ASC')->paginate($limit_count);
     }
 
 
