@@ -1,6 +1,509 @@
 
-/* Google map */
+/* ------------------- */
+/* base                */
+/* ------------------- */
+.body {
+    background-color: #F7F7F7;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    vertical-align: bottom;
+    object-fit: cover;
+}
+
+input {
+    resize: none;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+}
+
+.error {
+    margin-top: 10px;
+}
+
 #map {
     width: 450px;
     height: 300px;
+}
+
+#map img {
+    border-radius: 0;
+}
+
+
+/* ------------------- */
+/* TOPページ           */
+/* ------------------- */
+.container_toppage {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.wrapper-left {
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.change_talks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular_talks {
+    width: 49.5%;
+    background-color: #fff;
+    padding: 15px 15px 20px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.popular_talks--title,
+.latest_talks--title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+}
+
+.popular_talks--title:after,
+.latest_talks--title:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.popular_talk--title a,
+.latest_talk--title a {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.popular_talk--created_at,
+.latest_talk--created_at {
+    margin-bottom: 35px;
+}
+
+.to_list {
+    text-align: right;
+}
+
+.to_list a {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px 16px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+}
+
+.latest_talks {
+    width: 49.5%;
+    background-color: #fff;
+    padding: 15px 15px 20px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.wrapper-right {
+    width: 20%;
+    color: #fff;
+    background-color: #212529;
+    padding: 40px 15px;
+    margin-left: 30px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #212529;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.profile_image--toppage {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 50px;
+    box-shadow: 0 0 8px #FAFAFA;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.mypage-link {
+    margin-bottom: 50px;
+}
+
+.immutable_talks--title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.teams_talks_link {
+    margin-bottom: 30px;
+}
+
+.stadiums_talks_link {
+    margin-bottom: 50px;
+}
+
+.mypage-link a,
+.teams_talks_link a,
+.stadiums_talks_link a {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px 16px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+}
+
+.create_talk--title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.text-box {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    display: block;
+    color: #212529;
+    background-color: #fff;
+    font-weight: bold;
+    width: 90px;
+    margin: 0 auto;
+    line-height: 35px;
+    font-size: 1rem;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* ------------------- */
+/* 人気のトーク一覧    */
+/* 最新のトーク一覧    */
+/* ------------------- */
+.container_talks {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 50px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.talks_title {
+    font-size: 1.5rem;
+    margin-bottom: 35px;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+}
+
+.talks_title:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.target_period {
+    font-size: 0.95rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0 45px;
+    margin-right: 60px;
+}
+
+.target_period:before,
+.target_period:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 44px;
+    height: 2px;
+    background-color: black;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-60deg);
+}
+
+.target_period:before {
+    left:0;
+}
+
+.target_period:after {
+    right: 0;
+}
+
+.period_specify--wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 30px
+}
+
+.period_specify--title {
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+    padding: 8px 16px;
+    min-width: 120px;
+    max-width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    background: #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #212529;
+}
+
+.period_specify--title:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -13px;
+    border: 13px solid transparent;
+    border-left: 13px solid #212529;
+}
+
+.period_specify--title p {
+    margin: 0;
+    padding: 0;
+}
+
+.period_specify {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.period_specify--subject {
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px 24px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.period_specify--candidate {
+    font-size: 0.9rem;
+    font-weight: bold;
+    background-color: #212529;
+    padding: 8px 24px;
+    border: 1px solid #fff;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.period_specify--candidate a,
+.period_specify--candidate a:hover {
+    color: #fff;
+}
+
+.talk_info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.talk-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.talk-posts_number {
+    margin-bottom: 8px;
+}
+
+.talk-created_at {
+    margin-bottom: 25px;
+}
+
+
+
+/* ------------------- */
+/* 球団トーク          */
+/* ------------------- */
+.container_teams {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 50px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.teams_title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+}
+
+.teams_title:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.choose_teams {
+    width: 110px;
+    color: #fff;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.8em;
+    margin: 20px 0 40px;
+    background: #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.choose_teams:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 20px;
+    border: 15px solid transparent;
+    border-top: 15px solid #212529;
+    width: 0;
+    height: 0;
+}
+
+.team-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+
+
+/* ------------------- */
+/* 球場情報            */
+/* ------------------- */
+.container_stadiums {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 50px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.stadiums_title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+}
+
+.stadiums_title:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.choose_stadiums {
+    width: 110px;
+    color: #fff;
+    font-size: 0.9rem;
+    position: relative;
+    padding: 0.8em;
+    margin: 20px 0 40px;
+    background: #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.choose_stadiums:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 20px;
+    border: 15px solid transparent;
+    border-top: 15px solid #212529;
+    width: 0;
+    height: 0;
+}
+
+.stadium {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.stadium-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 10px 25px 0;
 }
