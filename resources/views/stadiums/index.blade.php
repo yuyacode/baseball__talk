@@ -14,7 +14,7 @@
         <div class="container_stadiums">
             <!-- 球場情報一覧 -->
             <h2 class="stadiums_title">球場情報</h2>
-            <p>球場情報とは、各球場の魅力や楽しさなど、様々な情報を共有し合うスペースです。</p>
+            <p>球場情報とは、各球場の魅力や周辺のおすすめスポットなど、様々な情報を共有し合うスペースです。</p>
             <p class="choose_stadiums">球場を選ぶ</p>
             <div class="stadiums">
                 @foreach($stadiums as $stadium)

@@ -61,7 +61,7 @@ class TalkController extends Controller
     public function show(Talk $talk)
     {
         return view('talks/show')->with([
-            'posts' => $talk->getPaginateByLimit(),
+            'posts' => $talk->getPosts(),
             'talk' => $talk
         ]);
     }
@@ -82,6 +82,5 @@ class TalkController extends Controller
         $talk->delete();
         return redirect('/mypage/'.$talk->user_id);
     }
-
 
 }

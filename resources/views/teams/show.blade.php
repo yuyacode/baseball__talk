@@ -1,4 +1,4 @@
-<!-- 球団トークの詳細 -->
+<!-- 球団トークの詳細画面 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -7,50 +7,73 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="body">
         @section('content')
-        <div class="container">
+        <div class="container_talks">
             <!-- 球団名 -->
-            <p>{{ $team->title }}</p>
+            <h2 class="talk_theme">{{ $team->title }}</h2>
             <!-- トークの投稿を取得 -->
-            <div>
+            <div class="post_list">
                 @foreach($posts as $post)
-                <p>{{ $post->body }}</p>
-                <!-- プロフィール画像の表示 -->
-                @if(isset($post->user->profile_image))
-                <p><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}" width="100" height="100"></p>
-                @else
-                <p><img src="{{ asset('image/noimage.jpg') }}" width="100" height="100"></p>
-                @endif
-                <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
-                <p>{{ $post->created_at }}</p>
+                <!-- 自分の投稿 -->
                 @if(Auth::user()->id === $post->user_id)
-                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit">削除</button> 
-                </form>
+                <div class="post_item--myself">
+                    <div class="post_item--content">
+                        <div class="post_item--info--myself">
+                            <p>（{{ $post->created_at }}）</p>
+                            <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
+                        </div>
+                        <div class="post_item--body--myself"><p>{{ $post->body }}</p></div>
+                    </div>
+                    @if(isset($post->user->profile_image))
+                    <p class="post_item--profile_image--myself"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
+                    @else
+                    <p class="post_item--profile_image--myself"><img src="{{ asset('image/noimage.jpg') }}"></p>
+                    @endif
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete_btn">削除</button> 
+                    </form>
+                </div>
+                <!-- 他人の投稿 -->
+                @else
+                <div class="post_item">
+                    @if(isset($post->user->profile_image))
+                    <p class="post_item--profile_image"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
+                    @else
+                    <p class="post_item--profile_image"><img src="{{ asset('image/noimage.jpg') }}"></p>
+                    @endif
+                    <div class="post_item--content">
+                        <div class="post_item--info">
+                            <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
+                            <p>（{{ $post->created_at }}）</p>
+                        </div>
+                        <div class="post_item--body"><p>{{ $post->body }}</p></div>
+                    </div>
+                </div>
                 @endif
                 @endforeach
             </div>
-            <!-- ページネーション -->
-            <div class='paginate'>
-                {{ $posts->links() }}
-            </div>
-            <!-- ユーザーの投稿作成箇所 -->
-            <form action="/posts" method="POST">
-                @csrf
+            <div class="post_list--others">
+                <!-- ユーザーの投稿作成箇所 -->
                 <div class="create_post">
-                    <input type="hidden" name="post[talk_id]" value="{{ $team->id }}" />
-                    <input type="hidden" name="post[kinds]" value="team" />
-                    <textarea name="post[body]" placeholder="投稿を作成する（最大250文字）">{{ old('post.body') }}</textarea>
-                    <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
+                    <form action="/posts" method="POST" class="create_post">
+                        @csrf
+                        <input type="hidden" name="post[talk_id]" value="{{ $team->id }}" />
+                        <input type="hidden" name="post[kinds]" value="team" />
+                        <textarea name="post[body]" class="create_post_area" placeholder="投稿を作成する（最大250文字）">{{ old('post.body') }}</textarea>
+                        <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
+                        <input type="submit" class="send_btn" value="送信"/>
+                    </form>
                 </div>
-                <input type="submit" value="送信"/>
-            </form>
-            <!-- 球団トークの一覧へ -->
-            <p><a href="/teams">球団トーク一覧へ</a></p>
+                <!-- 球団トーク一覧へ -->
+                <div class="talk_list_btn">
+                    <p><a href="/teams">球団トーク一覧へ</a></p>
+                </div>
+            </div>
         </div>
         @endsection
     </body>

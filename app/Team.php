@@ -22,10 +22,10 @@ class Team extends Model
         return $this->hasMany('App\Post', 'talk_id');  
     }
 
-    // トークの投稿を、作成日時の昇順で500件取得
-    public function getPaginateByLimit(int $limit_count = 500)
+    // 球団トークの投稿を取得
+    public function getPosts()
     {
-        return $this->posts()->where('kinds', 'team')->orderBy('created_at', 'ASC')->paginate($limit_count);
+        return $this->posts()->where('kinds', 'team')->orderBy('created_at', 'ASC')->get();
     }
 
 }
