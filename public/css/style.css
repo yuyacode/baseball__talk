@@ -369,6 +369,211 @@ input {
 
 
 /* ------------------- */
+/* 各種トーク詳細      */
+/* ------------------- */
+.talk_theme {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 1rem 1rem 1.5rem;
+}
+
+.talk_theme:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 自分の */
+.post_item--myself {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.post_item--info--myself {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.post_item--info--myself p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.post_item--body--myself {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    max-width: 100%;
+    color: #fff;
+    font-size: 0.95rem;
+    background: #212529; 
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #212529;
+    box-sizing: border-box;
+}
+
+.post_item--body--myself:before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 100%;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-left: 10px solid #212529;
+    box-sizing: border-box;
+}
+
+.post_item--body--myself p {
+  margin: 0;
+  padding: 0;
+}
+
+.post_item--profile_image--myself {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin: 0 0 0 20px;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+/* 他人の */
+.post_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post_item--profile_image {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    margin: 0 20px 0 0;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.post_item--info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.post_item--info p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.post_item--body {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    max-width: 100%;
+    color: #212529;
+    font-size: 0.95rem;
+    background: #C7EEFF;
+    border: 1px solid #C7EEFF;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #3490DC;
+    box-sizing: border-box;
+}
+
+.post_item--body:before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -20px;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-right: 10px solid #C7EEFF;
+    box-sizing: border-box;
+}
+
+.post_item--body p {
+    margin: 0;
+    padding: 0;
+}
+
+.delete_btn {
+    color: #3490DC;
+    background-color: #fff;
+    margin-left: 20px;
+    width: 50px;
+    height: 35px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.post_list--others {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.create_post {
+    width: 70%;
+}
+
+.create_post form {
+    width: 100%;
+}
+
+.create_post_area {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 70px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid #e5e5e5;
+    font-size: 1rem;
+    outline: none;
+    resize: none;
+}
+
+.send_btn {
+    color: #3490DC;
+    background-color: #fff;
+    font-weight: bold;
+    width: 50px;
+    height: 35px;
+    border: 1px solid #212529;
+    border-radius: 5px;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+    float: right;
+}
+
+.talk_list_btn {
+    width: 30%;
+    text-align: right;
+}
+
+
+
+/* ------------------- */
 /* 球団トーク          */
 /* ------------------- */
 .container_teams {
