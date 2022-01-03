@@ -38,6 +38,7 @@
                     </div>
                     <input type="submit" value="保存">
                 </form>
+                <p><a href="/mypage/{{ $user->id }}">マイページへ戻る</a></p>
             </div>
         </div>
         @endsection
