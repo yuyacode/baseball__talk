@@ -56,8 +56,6 @@
                         {{ $talks->links() }}
                     </div>
                 </div>
-            
-            
                 <div class="wrapper-right_mypage">
                     <!-- プロフィール画像の表示 -->
                     @if(isset($user->profile_image))
