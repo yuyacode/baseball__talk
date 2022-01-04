@@ -69,9 +69,9 @@
                         <input type="submit" class="send_btn" value="送信"/>
                     </form>
                 </div>
-                <!-- 球団トーク一覧へ -->
+                <!-- 球団一覧へ -->
                 <div class="talk_list_btn">
-                    <p><a href="/teams">球団トーク一覧へ</a></p>
+                    <p><a href="/teams">球団一覧へ</a></p>
                 </div>
             </div>
         </div>
