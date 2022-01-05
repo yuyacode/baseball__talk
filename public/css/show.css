@@ -1,0 +1,215 @@
+
+/* ------------------- */
+/* 各種トーク詳細      */
+/* ------------------- */
+.container_body {
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px 50px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.talk_theme {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 1rem 1.5rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.talk_theme:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-size: 7px 7px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.post_item_myself {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.post_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post_info_myself {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.post_info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.post_info_myself p,
+.post_info p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.post_body_myself {
+    color: #fff;
+    background: #212529;
+    font-size: 0.95rem;
+    max-width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 1px #212529;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+
+.post_body {
+    color: #212529;
+    background: #C7EEFF;
+    font-size: 0.95rem;
+    max-width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #C7EEFF;
+    box-shadow: 0 0 2px #3490DC;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+
+.post_body_myself:before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 100%;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-left: 10px solid #212529;
+    box-sizing: border-box;
+}
+
+.post_body:before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: -20px;
+    margin-top: -10px;
+    border: 10px solid transparent;
+    border-right: 10px solid #C7EEFF;
+    box-sizing: border-box;
+}
+
+.post_body_myself p,
+.post_body p {
+  margin: 0;
+  padding: 0;
+}
+
+.profile_image_myself {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.profile_image {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+    border: 1px solid #E5E5E5;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.delete_btn {
+    color: #3490DC;
+    background-color: #fff;
+    width: 50px;
+    height: 30px;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+}
+
+.others {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.create_post {
+    width: 70%;
+}
+
+.create_post_form {
+    width: 100%;
+}
+
+.create_post_area {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    width: 100%;
+    height: 70px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 2px solid #e5e5e5;
+    box-sizing: border-box;
+    outline: none;
+    resize: none;
+}
+
+.send_btn {
+    color: #3490DC;
+    background-color: #fff;
+    font-weight: bold;
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+    float: right;
+}
+
+.talk_list {
+    width: 30%;
+    text-align: right;
+}
+
+#map {
+    width: 450px;
+    height: 300px;
+}
+
+#map img {
+    border-radius: 0;
+}

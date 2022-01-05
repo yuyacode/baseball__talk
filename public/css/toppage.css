@@ -1,0 +1,166 @@
+
+/* ------------------- */
+/* TOPページ           */
+/* ------------------- */
+.container_body {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.wrapper_left {
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.change_talks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular_talks,
+.latest_talks {
+    width: 49.5%;
+    background-color: #fff;
+    padding: 15px 15px 20px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 4px #212529;
+    box-sizing: border-box;
+}
+
+.popular_talks_title,
+.latest_talks_title {
+    font-size: 1.5rem;
+    padding: 1rem 1rem 1.5rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.popular_talks_title:after,
+.latest_talks_title:after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    content: '';
+    background-size: 7px 7px;
+    background-image: -webkit-repeating-linear-gradient(135deg, #000, #000 1px, transparent 2px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, #000, #000 1px, transparent 2px, transparent 5px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.popular_talk_title a,
+.latest_talk_title a {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.popular_talk_created_at,
+.latest_talk_created_at {
+    margin-bottom: 35px;
+}
+
+.to_list {
+    text-align: right;
+}
+
+.to_list a {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 2px #212529;
+    box-sizing: border-box;
+}
+
+.wrapper_right {
+    width: 20%;
+    color: #fff;
+    background-color: #212529;
+    padding: 40px 15px;
+    margin-left: 30px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 6px #212529;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.profile_image {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+}
+
+.mypage_link {
+    margin-bottom: 50px;
+}
+
+.immutable_talks_title {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.teams_talks_link {
+    margin-bottom: 30px;
+}
+
+.stadiums_talks_link {
+    margin-bottom: 50px;
+}
+
+.mypage_link a,
+.teams_talks_link a,
+.stadiums_talks_link a {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+}
+
+.create_talk_theme {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.create_talk_box {
+    display: block;
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 8px #FAFAFA;
+    box-sizing: border-box;
+}
+
+.create_btn {
+    display: block;
+    color: #212529;
+    background-color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 35px;
+    width: 90px;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: 1px solid #212529;
+    box-shadow: 0 0 8px #FAFAFA;
+    text-align: center;
+    box-sizing: border-box;
+}
