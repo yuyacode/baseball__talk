@@ -8,33 +8,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/index_talk.css') }}" rel="stylesheet">
     </head>
     <body class="body">
         @section('content')
-        <div class="container_talks">
+        <div class="container_body">
             <!-- 人気のトーク一覧 -->
-            <h2 class="talks_title">人気のトーク一覧</h2>
+            <h2 class="page_title">人気のトーク一覧</h2>
             <!-- 期間 -->
-            <div class="period_specify--wrapper">
+            <div class="term_wrapper">
                 <!-- 対象期間 -->
-                <p class="target_period">対象期間：{{ $term }}</p>
+                <p class="term_selected">対象期間：{{ $term }}</p>
                 <!-- 期間を指定する -->
-                <div class="period_specify--title">
-                    <p>期間を指定する</p>
-                </div>
-                <div class="period_specify">
+                <div class="term_text"><p>期間を指定する</p></div>
+                <div class="term_list">
                     @if($term == '今月')
-                    <p class="period_specify--candidate"><a href="/talks_popular_today">今日</a></p>
-                    <p class="period_specify--candidate"><a href="/talks_popular_week">今週</a></p>
-                    <p class="period_specify--subject">今月</p>
+                    <p class="term_item"><a href="/talks_popular_today">今日</a></p>
+                    <p class="term_item"><a href="/talks_popular_week">今週</a></p>
+                    <p class="term_item_selected">今月</p>
                     @elseif($term == '今週')
-                    <p class="period_specify--candidate"><a href="/talks_popular_today">今日</a></p>
-                    <p class="period_specify--subject">今週</p>
-                    <p class="period_specify--candidate"><a href="/talks_popular_month">今月</a></p>
+                    <p class="term_item"><a href="/talks_popular_today">今日</a></p>
+                    <p class="term_item_selected">今週</p>
+                    <p class="term_item"><a href="/talks_popular_month">今月</a></p>
                     @else
-                    <p class="period_specify--subject">今日</p>
-                    <p class="period_specify--candidate"><a href="/talks_popular_week">今週</a></p>
-                    <p class="period_specify--candidate"><a href="/talks_popular_month">今月</a></p>
+                    <p class="term_item_selected">今日</p>
+                    <p class="term_item"><a href="/talks_popular_week">今週</a></p>
+                    <p class="term_item"><a href="/talks_popular_month">今月</a></p>
                     @endif
                 </div>
             </div>
@@ -42,10 +41,10 @@
                 @foreach($talks as $talk)
                 <div class="talk">
                     <div class="talk_info">
-                        <h2 class="talk-title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
-                        <p class="talk-posts_number">（投稿数：{{ $talk->posts_number }}）</p>
+                        <h2 class="talk_title"><a href="talks/{{ $talk->id }}">{{ $talk->title }}</a></h2>
+                        <p class="talk_posts_number">（投稿数：{{ $talk->posts_number }}）</p>
                     </div>
-                    <p class="talk-created_at">（{{ $talk->created_at }}）</p>
+                    <p class="talk_created_at">（{{ $talk->created_at }}）</p>
                 </div>
                 @endforeach
             </div>

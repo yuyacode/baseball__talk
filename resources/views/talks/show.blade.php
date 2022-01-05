@@ -1,4 +1,4 @@
-<!-- トークの詳細 -->
+<!-- トークの詳細画面 -->
 @extends('layouts.app')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -8,10 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>baseball talk</title>
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/show.css') }}" rel="stylesheet">
     </head>
     <body class="body">
         @section('content')
-        <div class="container_talks">
+        <div class="container_body">
             <!-- トークテーマ -->
             <h2 class="talk_theme">{{ $talk->title }}</h2>
             <!-- トーク作成者 -->
@@ -21,18 +22,18 @@
                 @foreach($posts as $post)
                 <!-- 自分の投稿 -->
                 @if(Auth::user()->id === $post->user_id)
-                <div class="post_item--myself">
-                    <div class="post_item--content">
-                        <div class="post_item--info--myself">
+                <div class="post_item_myself">
+                    <div class="post_content_myself">
+                        <div class="post_info_myself">
                             <p>（{{ $post->created_at }}）</p>
                             <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                         </div>
-                        <div class="post_item--body--myself"><p>{{ $post->body }}</p></div>
+                        <div class="post_body_myself"><p>{{ $post->body }}</p></div>
                     </div>
                     @if(isset($post->user->profile_image))
-                    <p class="post_item--profile_image--myself"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
+                    <p class="profile_image_myself"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
                     @else
-                    <p class="post_item--profile_image--myself"><img src="{{ asset('image/noimage.jpg') }}"></p>
+                    <p class="profile_image_myself"><img src="{{ asset('image/noimage.jpg') }}"></p>
                     @endif
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                         @csrf
@@ -44,35 +45,35 @@
                 @else
                 <div class="post_item">
                     @if(isset($post->user->profile_image))
-                    <p class="post_item--profile_image"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
+                    <p class="profile_image"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
                     @else
-                    <p class="post_item--profile_image"><img src="{{ asset('image/noimage.jpg') }}"></p>
+                    <p class="profile_image"><img src="{{ asset('image/noimage.jpg') }}"></p>
                     @endif
-                    <div class="post_item--content">
-                        <div class="post_item--info">
+                    <div class="post_content">
+                        <div class="post_info">
                             <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
                             <p>（{{ $post->created_at }}）</p>
                         </div>
-                        <div class="post_item--body"><p>{{ $post->body }}</p></div>
+                        <div class="post_body"><p>{{ $post->body }}</p></div>
                     </div>
                 </div>
                 @endif
                 @endforeach
             </div>
-            <div class="post_list--others">
+            <div class="others">
                 <!-- ユーザーの投稿作成箇所 -->
                 <div class="create_post">
-                    <form action="/posts" method="POST" class="create_post">
+                    <form action="/posts" method="POST" class="create_post_form">
                         @csrf
                         <input type="hidden" name="post[talk_id]" value="{{ $talk->id }}" />
                         <input type="hidden" name="post[kinds]" value="general" />
                         <textarea name="post[body]" class="create_post_area" placeholder="投稿を作成する（最大250文字）">{{ old('post.body') }}</textarea>
-                        <p class="body_error" style="color:red">{{ $errors->first('post.body') }}</p>
+                        <p class="error">{{ $errors->first('post.body') }}</p>
                         <input type="submit" class="send_btn" value="送信"/>
                     </form>
                 </div>
                 <!-- トーク一覧へ -->
-                <div class="talk_list_btn">
+                <div class="talk_list">
                     <p><a href="/talks_popular_week">「人気のトーク」一覧へ</a></p>
                     <p><a href="/talks_latest">「最新のトーク」一覧へ</a></p>
                 </div>
