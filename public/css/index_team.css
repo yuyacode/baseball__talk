@@ -64,3 +64,44 @@
     font-weight: bold;
     margin-bottom: 25px;
 }
+
+
+
+/* レスポンシブ対応　1180px */
+@media screen and (max-width: 1180px) {
+    .container_body {
+        width: 90vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .page_title {
+        font-size: 1.3rem;
+    }
+    
+    .team_name {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* レスポンシブ対応　500px */
+@media screen and (max-width: 500px) {
+    .container_body {
+        width: 96vw;
+        padding: 25px 35px;
+        box-sizing: border-box;
+    }
+    
+    .page_title {
+        font-size: 1.2rem;
+    }
+    
+    .team_select {
+        padding: 10px 15px;
+    }
+}
