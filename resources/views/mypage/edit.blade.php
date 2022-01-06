@@ -41,7 +41,7 @@
                     <input type="submit" class="save_btn" value="保存">
                 </form>
             </div>
-            <p class="mypage_link"><a href="/mypage/{{ $user->id }}">マイページへ戻る</a></p>
+            <p class="mypage_link"><a href="/mypage/{{ $user->id }}">マイページに戻る</a></p>
         </div>
         @endsection
     </body>

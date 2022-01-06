@@ -41,7 +41,7 @@
 }
 
 .wrapper_left {
-    width: 70%;
+    width: 65%;
     box-sizing: border-box;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .wrapper_right {
-    width: 30%;
+    width: 35%;
     color: #fff;
     background-color: #212529;
     padding: 40px 15px;
@@ -232,4 +232,178 @@
     border: 1px solid #212529;
     box-shadow: 0 0 6px #FAFAFA;
     box-sizing: border-box;
+}
+
+
+
+/* レスポンシブ対応　1280px */
+@media screen and (max-width: 1280px) {
+    .container_body {
+        width: 92vw;
+    }
+    
+    .wrapper_left {
+        width: 60%;
+    }
+    
+    .wrapper_right {
+        width: 40%;
+    }
+}
+
+
+
+/* レスポンシブ対応　1023px */
+@media screen and (max-width: 1023px) {
+    .container_body {
+        width: 96vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　960px */
+@media screen and (max-width: 960px) {
+    .container_body {
+        width: 92vw;
+    }
+    
+    .wrapper {
+        display: block;
+    }
+    
+    .wrapper_left {
+        width: 100%;
+    }
+    
+    .wrapper_right {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .container_body {
+        width: 96vw;
+        padding: 25px 35px;
+        box-sizing: border-box;
+    }
+    
+    .page_title {
+        font-size: 1.3rem;
+    }
+    
+    .user_name {
+        font-size: 1.3rem;
+    }
+    
+    .talks_title {
+        width: 100%;
+    }
+    
+    .talk_title {
+        font-size: 1rem;
+    }
+    
+    .wrapper_right {
+        width: 85%;
+    }
+}
+
+
+
+/* レスポンシブ対応　500px */
+@media screen and (max-width: 500px) {
+    .page_title {
+        font-size: 1.2rem;
+    }
+    
+    .user_info {
+        display: block;
+    }
+    
+    .user_name {
+        font-size: 1.2rem;
+    }
+    
+    .user_favorite_team {
+        margin-top: 25px;
+    }
+    
+    .user_profile {
+        margin-top: 25px;
+    }
+    
+    .talks_title {
+        margin-top: 50px;
+    }
+    
+    .talk_info:nth-child(1) {
+        display: block;
+    }
+    
+    .talk_title {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .talk_posts_number {
+        margin-bottom: 2px;
+    }
+    
+    .delete_btn {
+        font-size: 90%;
+    }
+    
+    .wrapper_right {
+        width: 100%;
+        padding: 30px 8px;
+        box-sizing: border-box;
+    }
+    
+    .profile_image {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .delete_profile_image {
+        font-size: 0.8rem;
+        font-weight: normal;
+        height: 30px;
+    }
+    
+    .edit_profile_image {
+        margin: 40px 0;
+    }
+    
+    .edit_profile_image_text {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .file_btn {
+        font-size: 90%;
+    }
+    
+    .upload_btn,
+    .create_talk_btn {
+        font-weight: normal;
+    }
+    
+    .edit_profile {
+        font-size: 0.9rem;
+    }
+    
+    .edit_profile_btn {
+        font-weight: normal;
+        padding: 3px 6px;
+        margin-bottom: 40px;
+    }
+    
+    .create_talk_theme {
+        font-size: 0.9rem;
+    }
 }
