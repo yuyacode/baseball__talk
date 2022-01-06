@@ -16,7 +16,7 @@
             <!-- トークテーマ -->
             <h2 class="talk_theme">{{ $talk->title }}</h2>
             <!-- トーク作成者 -->
-            <p>（トーク作成者：<a href="/mypage/{{ $talk->user->id }}">{{ $talk->user->name }}</a>）</p>
+            <p class="talk_creator">（トーク作成者：<a href="/mypage/{{ $talk->user->id }}">{{ $talk->user->name }}</a>）</p>
             <!--トークに属する投稿を取得-->
             <div class="post_list">
                 @foreach($posts as $post)
@@ -25,21 +25,23 @@
                 <div class="post_item_myself">
                     <div class="post_content_myself">
                         <div class="post_info_myself">
-                            <p>（{{ $post->created_at }}）</p>
                             <p><a href="/mypage/{{ $post->user->id }}">{{ $post->user->name }}</a></p>
+                            <p>（{{ $post->created_at }}）</p>
                         </div>
                         <div class="post_body_myself"><p>{{ $post->body }}</p></div>
                     </div>
-                    @if(isset($post->user->profile_image))
-                    <p class="profile_image_myself"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
-                    @else
-                    <p class="profile_image_myself"><img src="{{ asset('image/noimage.jpg') }}"></p>
-                    @endif
-                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete_btn">削除</button> 
-                    </form>
+                    <div class="post_others_myself">
+                        @if(isset($post->user->profile_image))
+                        <p class="profile_image_myself"><img src="https://s3.ap-northeast-1.amazonaws.com/baseballtalk.profile.image/{{ $post->user->profile_image }}"></p>
+                        @else
+                        <p class="profile_image_myself"><img src="{{ asset('image/noimage.jpg') }}"></p>
+                        @endif
+                        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete_btn">削除</button> 
+                        </form>
+                    </div>
                 </div>
                 <!-- 他人の投稿 -->
                 @else

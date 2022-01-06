@@ -267,8 +267,8 @@
 
 
 
-/* レスポンシブ対応　500px */
-@media screen and (max-width: 500px) {
+/* レスポンシブ対応　600px */
+@media screen and (max-width: 600px) {
     .change_talks {
         display: block;
     }
