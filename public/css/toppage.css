@@ -164,3 +164,163 @@
     text-align: center;
     box-sizing: border-box;
 }
+
+
+
+/* レスポンシブ対応　1280px */
+@media screen and (max-width: 1280px) {
+    .container_body {
+        width: 92vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　1023px */
+@media screen and (max-width: 1023px) {
+    .wrapper_right {
+        margin-left: 10px;
+    }
+    
+    .mypage_link a,
+    .immutable_talks_title,
+    .teams_talks_link a,
+    .stadiums_talks_link a,
+    .create_talk_theme,
+    .create_btn {
+        font-size: 0.9rem;
+    }
+    
+    .create_btn {
+        line-height: 30px;
+    }
+}
+
+
+
+/* レスポンシブ対応　960px */
+@media screen and (max-width: 960px) {
+    .container_body {
+        width: 96vw;
+    }
+    
+    .popular_talks_title,
+    .latest_talks_title {
+        font-size: 1.2rem;
+    }
+    
+    .popular_talk_title a,
+    .latest_talk_title a {
+        font-size: 1.05rem;
+    }
+    
+    .popular_talk_created_at,
+    .latest_talk_created_at {
+        margin-bottom: 25px;
+    }
+    
+    .to_list a {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .container_body {
+        display: block;
+    }
+    
+    .wrapper_left {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .popular_talks,
+    .latest_talks {
+        width: 49%;
+    }
+    
+    .popular_talks_title,
+    .latest_talks_title {
+        font-size: 1.1rem;
+    }
+    
+    .popular_talk_title a,
+    .latest_talk_title a {
+        font-size: 1rem;
+    }
+    
+    .wrapper_right {
+        width: 75%;
+        padding: 30px 15px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .create_talk_box {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
+
+/* レスポンシブ対応　600px */
+@media screen and (max-width: 600px) {
+    .change_talks {
+        display: block;
+    }
+    
+    .popular_talks,
+    .latest_talks {
+        width: 100%;
+    }
+    
+    .popular_talks {
+        margin-bottom: 24px;
+    }
+    
+    .popular_talks_title,
+    .latest_talks_title {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    
+    .popular_talk_title,
+    .latest_talk_title {
+        margin-bottom: 5px;
+        line-height: 1;
+    }
+    
+    .popular_talk_title a,
+    .latest_talk_title a {
+        font-size: 0.9rem;
+    }
+    
+    .popular_talk_created_at,
+    .latest_talk_created_at {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+    
+    .to_list a {
+        font-size: 0.8rem;
+    }
+    
+    .wrapper_right {
+        width: 85%;
+    }
+    
+    .profile_image,
+    .mypage_link,
+    .stadiums_talks_link {
+        margin-bottom: 40px;
+    }
+    
+    .create_btn {
+        font-size: 0.85rem;
+        width: 70px;
+    }
+}

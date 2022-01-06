@@ -84,3 +84,54 @@
 .mypage_link {
     margin-top: 20px;
 }
+
+
+
+/* レスポンシブ対応　1023px */
+@media screen and (max-width: 1023px) {
+    .container_body {
+        width: 92vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .container_body {
+        padding: 25px 35px;
+    }
+    
+    .page_title {
+        font-size: 1.3rem;
+    }
+}
+
+
+
+/* レスポンシブ対応　500px */
+@media screen and (max-width: 500px) {
+    .container_body {
+        width: 96vw;
+    }
+    
+    .page_title {
+        font-size: 1.2rem;
+    }
+    
+    .mypage_edit_form_item {
+        margin-bottom: 25px;
+    }
+    
+    .form_title {
+        font-size: 0.9rem;
+    }
+    
+    .profile_form {
+        font-size: 0.95rem;
+    }
+    
+    .save_btn {
+        font-size: 90%;
+    }
+}

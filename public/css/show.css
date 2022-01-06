@@ -40,7 +40,6 @@
     justify-content: flex-end;
     align-items: center;
     margin-bottom: 15px;
-    text-align: right;
 }
 
 .post_item {
@@ -80,8 +79,9 @@
     border: 1px solid #212529;
     box-shadow: 0 0 1px #212529;
     box-sizing: border-box;
-    display: inline-block;
+    display: block;
     position: relative;
+    float: right;
 }
 
 .post_body {
@@ -101,7 +101,7 @@
 .post_body_myself:before {
     content: "";
     position: absolute;
-    top: 16px;
+    top: 50%;
     left: 100%;
     margin-top: -10px;
     border: 10px solid transparent;
@@ -112,7 +112,7 @@
 .post_body:before {
     content: "";
     position: absolute;
-    top: 16px;
+    top: 50%;
     left: -20px;
     margin-top: -10px;
     border: 10px solid transparent;
@@ -124,6 +124,12 @@
 .post_body p {
   margin: 0;
   padding: 0;
+}
+
+.post_others_myself {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .profile_image_myself {
@@ -206,10 +212,152 @@
 }
 
 #map {
-    width: 450px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
 }
 
 #map img {
     border-radius: 0;
+}
+
+
+
+/* レスポンシブ対応　1280px */
+@media screen and (max-width: 1280px) {
+    .container_body {
+        width: 92vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　960px */
+@media screen and (max-width: 960px) {
+    .container_body {
+        width: 96vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .container_body {
+        padding: 25px;
+    }
+    
+    .talk_theme {
+        font-size: 1.1rem;
+    }
+
+    .post_body_myself,
+    .post_body {
+        font-size: 0.9rem;
+    }
+    
+    .profile_image_myself {
+        width: 45px;
+        height: 45px;
+        margin-left: 15px;
+    }
+    
+    .profile_image {
+        width: 45px;
+        height: 45px;
+        margin-right: 15px;
+    }
+    
+    .delete_btn {
+        width: 45px;
+        height: 27px;
+        margin-left: 15px;
+    }
+    
+    .others {
+        display: block;
+        margin-top: 40px;
+    }
+    
+    .create_post {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .create_post_area {
+        font-size: 0.9rem;
+    }
+    
+    .talk_list {
+        width: 40%;
+        text-align: left;
+    }
+}
+
+
+
+/* レスポンシブ対応　500px */
+@media screen and (max-width: 500px) {
+    .talk_theme {
+        font-size: 1rem;
+    }
+    
+    .talk_creator {
+        font-size: 0.8rem;
+    }
+    
+    .post_info_myself,
+    .post_info {
+        display: block;
+    }
+    
+    .post_info_myself p,
+    .post_info p {
+        font-size: 0.65rem;
+    }
+    
+    .post_body_myself,
+    .post_body {
+        font-size: 0.85rem;
+    }
+    
+    .post_others_myself {
+        display: block;
+    }
+    
+    .profile_image_myself {
+        margin: 0 0 10px 20px;
+    }
+    
+    .delete_btn {
+        font-size: 0.75rem;
+        height: 22.5px;
+        margin-left: 20px;
+    }
+    
+    .others {
+        margin-top: 30px;
+    }
+    
+    .create_post {
+        width: 100%;
+    }
+    
+    .create_post_area {
+        font-size: 0.85rem;
+    }
+    
+    .send_btn {
+        font-size: 85%;
+        width: 45px;
+        height: 30px;
+    }
+    
+    .talk_list {
+        font-size: 0.85rem;
+        width: 60%;
+    }
+    
+    .talk_list p {
+        margin-bottom: 10px;
+    }
 }

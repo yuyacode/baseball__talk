@@ -70,3 +70,55 @@
     font-weight: bold;
     margin: 0 10px 25px 0;
 }
+
+
+
+/* レスポンシブ対応　1180px */
+@media screen and (max-width: 1180px) {
+    .container_body {
+        width: 90vw;
+    }
+}
+
+
+
+/* レスポンシブ対応　768px */
+@media screen and (max-width: 768px) {
+    .container_body {
+        padding: 25px 35px;
+    }
+    
+    .page_title {
+        font-size: 1.3rem;
+    }
+    
+    .stadium_name {
+        font-size: 1rem;
+    }
+}
+
+
+
+/* レスポンシブ対応　520px */
+@media screen and (max-width: 520px) {
+    .container_body {
+        width: 96vw;
+    }
+    
+    .page_title {
+        font-size: 1.2rem;
+    }
+    
+    .stadium_select {
+        padding: 10px 15px;
+    }
+    
+    .stadium {
+        display: block;
+        margin-bottom: 20px;
+    }
+    
+    .stadium_name {
+        margin: 0 0 5px 0;
+    }
+}
