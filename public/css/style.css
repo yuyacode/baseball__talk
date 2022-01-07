@@ -26,3 +26,49 @@ input {
     color: red;
     margin: 8px 0;
 }
+
+/* ページトップ */
+.js-scroll-fadein {
+    transition: opacity 1s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+}
+
+.js-scroll-fadein.is-fadein {
+    visibility: visible;
+    opacity: 1;
+}
+
+.arrow {
+    position: fixed;
+    right: 20px;
+    bottom: 5px;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 22px;
+    border: 2px solid #E5E5E5;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    opacity: 0.9;
+    bottom: 7px;
+    box-shadow: 0 0px 4px 1px rgba(51, 51, 51, 0.5);
+}
+
+.arrow:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #333;
+    border-right: 3px solid #333;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    box-sizing: border-box;
+}

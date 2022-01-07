@@ -79,5 +79,9 @@
             </div>
         </div>
         @endsection
+        <!-- ページトップ -->
+        <div id="js-scroll-fadein" class="js-scroll-fadein arrow"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>
