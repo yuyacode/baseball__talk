@@ -159,9 +159,9 @@
     height: 30px;
     margin-left: 20px;
     border-radius: 5px;
-    border: 1px solid #212529;
-    box-shadow: 0 0 2px #212529;
+    border: 2px solid #E5E5E5;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .others {
@@ -196,14 +196,13 @@
 .send_btn {
     color: #3490DC;
     background-color: #fff;
-    font-weight: bold;
     width: 50px;
     height: 35px;
     border-radius: 5px;
-    border: 1px solid #212529;
-    box-shadow: 0 0 2px #212529;
+    border: 2px solid #E5E5E5;
     box-sizing: border-box;
     float: right;
+    text-align: center;
 }
 
 .talk_list {
@@ -329,9 +328,12 @@
     }
     
     .delete_btn {
-        font-size: 0.75rem;
-        height: 22.5px;
+        font-size: 0.6rem;
+        padding: 1px 0;
         margin-left: 20px;
+        height: 22.5px;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
     }
     
     .others {

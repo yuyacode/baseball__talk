@@ -47,6 +47,7 @@
 .name_form,
 .team_form {
     color: #212529;
+    background-color: #fff;
     width: 270px;
     height: 35px;
     padding: 5px 10px;
