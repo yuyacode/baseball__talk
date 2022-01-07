@@ -39,6 +39,11 @@
         <div class="container_body">
             <!-- 球場名表示 -->
             <h2 class="talk_theme">{{ $stadium->title }}</h2>
+            <!-- Google map -->
+            <div class="google_map_wrapper">
+                <p class="google_map"><a>Googleマップ</a></p>
+                <div id="map"></div>
+            </div>
             <!-- トークの投稿を取得 -->
             <div class="post_list">
                 @foreach($posts as $post)
@@ -101,9 +106,11 @@
                     <p><a href="/stadiums">球場一覧へ</a></p>
                 </div>
             </div>
-            <!-- Google map -->
-            <div id="map"></div>
         </div>
         @endsection
+        <!-- ページトップ -->
+        <div id="js-scroll-fadein" class="js-scroll-fadein arrow"></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="{{ asset('js/script.js') }}"></script>
     </body>
 </html>

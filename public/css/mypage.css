@@ -136,6 +136,7 @@
     border-radius: 5px;
     border: 2px solid #E5E5E5;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .wrapper_right {
@@ -355,7 +356,12 @@
     }
     
     .delete_btn {
-        font-size: 90%;
+        font-size: 0.6rem;
+        padding: 1px 0;
+        width: 45px;
+        height: 22.5px;
+        border: 1px solid #E5E5E5;
+        box-sizing: border-box;
     }
     
     .wrapper_right {
@@ -370,8 +376,9 @@
     }
     
     .delete_profile_image {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         font-weight: normal;
+        width: 60px;
         height: 30px;
     }
     
@@ -388,17 +395,11 @@
         font-size: 90%;
     }
     
-    .upload_btn,
-    .create_talk_btn {
-        font-weight: normal;
-    }
-    
     .edit_profile {
         font-size: 0.9rem;
     }
     
     .edit_profile_btn {
-        font-weight: normal;
         padding: 3px 6px;
         margin-bottom: 40px;
     }
