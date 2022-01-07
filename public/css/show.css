@@ -35,6 +35,27 @@
     backface-visibility: hidden;
 }
 
+.google_map_wrapper {
+    margin-bottom: 30px;
+}
+
+.google_map {
+    color: #3490DC;
+    font-size: 1rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#map {
+    display: none;
+    width: 600px;
+    height: 250px;
+}
+
+#map img {
+    border-radius: 0;
+}
+
 .post_item_myself {
     display: flex;
     justify-content: flex-end;
@@ -210,13 +231,49 @@
     text-align: right;
 }
 
-#map {
-    width: 300px;
-    height: 200px;
+.js-scroll-fadein {
+    transition: opacity 1s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
 }
 
-#map img {
-    border-radius: 0;
+.js-scroll-fadein.is-fadein {
+    visibility: visible;
+    opacity: 1;
+}
+
+.arrow {
+    position: fixed;
+    right: 20px;
+    bottom: 5px;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 22px;
+    border: 2px solid #E5E5E5;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    opacity: 0.9;
+    bottom: 7px;
+    box-shadow: 0 0px 4px 1px rgba(51, 51, 51, 0.5);
+}
+
+.arrow:before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #333;
+    border-right: 3px solid #333;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    box-sizing: border-box;
 }
 
 
@@ -247,6 +304,10 @@
     
     .talk_theme {
         font-size: 1.1rem;
+    }
+    
+    #map {
+        width: 420px;
     }
 
     .post_body_myself,
@@ -302,6 +363,19 @@
     
     .talk_creator {
         font-size: 0.8rem;
+    }
+    
+    .google_map_wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .google_map {
+        font-size: 0.9rem;
+    }
+    
+    #map {
+        width: 300px;
+        height: 200px;
     }
     
     .post_info_myself,

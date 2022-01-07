@@ -40,7 +40,10 @@
             <!-- 球場名表示 -->
             <h2 class="talk_theme">{{ $stadium->title }}</h2>
             <!-- Google map -->
-            <div id="map"></div>
+            <div class="google_map_wrapper">
+                <p class="google_map"><a>Googleマップ</a></p>
+                <div id="map"></div>
+            </div>
             <!-- トークの投稿を取得 -->
             <div class="post_list">
                 @foreach($posts as $post)

@@ -1,4 +1,12 @@
 
+// Googleマップ　トグルメニュー
+$(function() {
+    $('.google_map a').click(function() {
+        $('#map').slideToggle(300);
+    });
+});
+
+
 // ページトップ
 const topButton = document.getElementById('js-scroll-fadein')
 function getScrolled() {
