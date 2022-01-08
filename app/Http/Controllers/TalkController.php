@@ -66,7 +66,7 @@ class TalkController extends Controller
         ]);
     }
     
-    // ユーザーがトークテーマを作成
+    // ユーザーがトークを作成
     public function store(TalkRequest $request, Talk $talk)
     {
         $input = $request['talk'];
@@ -75,7 +75,7 @@ class TalkController extends Controller
         return redirect('/talks/'.$talk->id);
     }
     
-    // ユーザーがトークテーマを削除
+    // ユーザーがトークを削除
     public function destroy(Talk $talk)
     {
         $this->authorize('delete', $talk);
