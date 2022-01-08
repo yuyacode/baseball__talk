@@ -217,8 +217,8 @@
 .send_btn {
     color: #3490DC;
     background-color: #fff;
-    width: 50px;
-    height: 35px;
+    line-height: 30px;
+    padding: 0 8px;
     border-radius: 5px;
     border: 2px solid #E5E5E5;
     box-sizing: border-box;
@@ -424,8 +424,8 @@
     
     .send_btn {
         font-size: 85%;
-        width: 45px;
-        height: 30px;
+        line-height: 25px;
+        padding: 0 6px;
     }
     
     .talk_list {
