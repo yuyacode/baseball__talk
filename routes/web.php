@@ -14,22 +14,22 @@
 
 Route::group(['middleware' => 'auth'], function(){
 
-    // TOPページにリクエストが来た際、人気と最新のトークを5件表示する処理
+    // TOPページを表示
     Route::get('/', 'TalkController@index');
     
-    // 今月の人気のトーク一覧画面「/talks_popular_month」にリクエストが来た場合
+    // 人気のトーク（今月）一覧画面を表示
     Route::get('/talks_popular_month', 'TalkController@index_popular_month');
 
-    // 今週の人気のトーク一覧画面「/talks_popular_week」にリクエストが来た場合
+    // 人気のトーク（今週）一覧画面を表示
     Route::get('/talks_popular_week', 'TalkController@index_popular_week');
     
-    // 今日の人気のトーク一覧画面「/talks_popular_today」にリクエストが来た場合
+    // 人気のトーク（今日）一覧画面を表示
     Route::get('/talks_popular_today', 'TalkController@index_popular_today');
 
-    // 最新のトーク一覧画面「/talks_latest」にリクエストが来た場合
+    // 最新のトーク 一覧画面を表示
     Route::get('/talks_latest', 'TalkController@index_latest');
 
-    // 人気と最新のトーク一覧画面から、各トークの詳細画面（各トークページ）にリクエストが来た場合
+    // 人気,最新のトーク 詳細画面を表示
     Route::get('/talks/{talk}', 'TalkController@show');
 
     // ユーザーが新規投稿を作成
@@ -38,25 +38,25 @@ Route::group(['middleware' => 'auth'], function(){
     // ユーザーが投稿を削除
     Route::delete('/posts/{post}', 'PostController@destroy');
 
-    // ユーザーがトークテーマを作成
+    // ユーザーがトークを作成
     Route::post('/talks', 'TalkController@store');
     
     // ユーザーがトークを削除
     Route::delete('/talks/{talk}', 'TalkController@destroy');
 
-    // TOPページにて、球団トークを選択
+    // 球団トーク 一覧画面を表示
     Route::get('/teams', 'TeamController@index');
 
-    // 球団のトーク一覧画面から、詳細画面へ
+    // 球団トーク 詳細画面を表示
     Route::get('/teams/{team}', 'TeamController@show');
 
-    // TOPページにて、球場情報を選択
+    // 球場情報 一覧画面を表示
     Route::get('/stadiums', 'StadiumController@index');
 
-    // 球場情報の一覧画面から、詳細画面へ
+    // 球場情報 詳細画面を表示
     Route::get('/stadiums/{stadium}', 'StadiumController@show');
     
-    // マイページへアクセス
+    // マイページを表示
     Route::get('/mypage/{user}', 'UserController@index');
     
     // マイページにて、プロフィール画像をアップロード
@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function(){
     // マイページにて、プロフィール画像を削除
     Route::delete('/mypage/{user}', 'UserController@delete');
     
-    // マイページの編集画面へアクセス
+    // マイページ 編集画面を表示
     Route::get('/mypage/{user}/edit', 'UserController@edit');
     
     // マイページを編集（ユーザー情報を更新）

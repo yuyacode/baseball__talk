@@ -55,7 +55,7 @@ class UserController extends Controller
     }
 
 
-    // マイページの編集画面へ遷移
+    // マイページの編集画面を表示
     public function edit(User $user, Team $team)
     {
         $this->authorize('update', $user);
