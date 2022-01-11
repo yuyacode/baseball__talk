@@ -14,7 +14,7 @@
         @section('content')
             <div class="container_body">
                 <h2 class="page_title">球場情報</h2>
-                <p>球場情報とは、各球場の魅力や周辺のおすすめスポットなど、様々な情報を共有し合うスペースです。</p>
+                <p>球場情報とは、各球場の魅力や周辺のおすすめスポットなど、様々な情報を交換,共有するスペースです。</p>
                 <p class="stadium_select">球場を選ぶ</p>
                 <div class="stadiums">
                     @foreach($stadiums as $stadium)
