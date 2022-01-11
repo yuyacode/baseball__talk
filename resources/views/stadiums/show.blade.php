@@ -39,7 +39,7 @@
             <div class="container_body">
                 <h2 class="talk_theme">{{ $stadium->title }}</h2>
                 <div class="google_map_wrapper">
-                    <p class="google_map"><a>Googleマップ</a></p>
+                    <p class="google_map"><a>▼ Googleマップ</a></p>
                     <div id="map"></div>
                 </div>
                 <div class="post_list">
