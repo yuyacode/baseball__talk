@@ -1,78 +1,72 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# baseball talk
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+全国のプロ野球ファンが交流できる掲示板サービスです。
 
-## About Laravel
+（画像表示）
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## このサービスを開発した目的、目指した課題解決
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### このサービスを開発したきっかけ
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+コロナウイルスにより大学がオンライン授業になり、友達とプロ野球の話をする機会が減ってしまったことがきっかけです。小学生の頃にプロ野球を好きになってから今まで、毎日学校で友達とプロ野球の話をすることがとても楽しい時間でした。しかし、オンライン授業になってからは友達と会う回数も減り、プロ野球の話をする機会が減ってしまいました。そこで、この課題を解決しようと、自分の武器であるプログラミングスキルを活かし、学校の友達はもちろん、全国のプロ野球ファンの方々と、インターネットを通してプロ野球の話ができる（交流できる）サービスがあると良いなと思い、このサービスの開発をはじめました。
 
-## Learning Laravel
+### 誰のために？
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* 全国のプロ野球ファン
+* 沢山の人とプロ野球の話で盛り上がりたい方
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 何ができる？
 
-## Laravel Sponsors
+* 全国のプロ野球ファンと掲示板を通して交流することができる。
+* いつでもどこでも好きなときに、プロ野球トークを楽しむことができる。
+* 各球場の魅力や情報を共有,交換することができる。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 技術・開発概要
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### DB設計（ER図）
 
-## Contributing
+（画像表示）
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 使用技術
 
-## Code of Conduct
+* 言語：PHP 7.3.31
+* フレームワーク：Laravel 6.20.43
+* インフラ：AWS Cloud9（Environment type：EC2）（Instance type：t2.micro）（Platform：Amazon Linux 2 (recommended) ）
+* データベース：MariaDB
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 開発人数
+* 個人開発（1人）
 
-## Security Vulnerabilities
+## 開発過程
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+開発中に大変だった点、工夫した点についてです。
 
-## License
+### 大変だった点、苦労した点
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### 1、Google map APIを使ったGoogleマップの表示
+
+Google map APIを使ったGoogleマップの表示に苦戦しました。このサービスの場合、決まられたページに決められたマップを表示するのではなく、ユーザーが選択した球場に合わせて、その球場のマップを表示するという処理が必要でした。そのため、PHPの配列データをJSONに変換し、JavaScriptに渡す方法を用いました。この方法により実装することができました。
+
+### 工夫した点
+
+#### 1、ユーザーの特定モデルに対するアクションの認可
+
+If文による条件分岐とPolicyを用いた認可により、ユーザーの特定モデルに対するアクションの認可機能を実装しました。具体的には、自分が作成したトーク,投稿のみ削除可能といった認可、自分のユーザー情報のみ編集,更新可能といった認可処理を実装しました。
+
+#### 2、Amazon S3を使ったプロフィール画像機能の実装
+
+現在は掲示板サービスであるものの、今後、チャットアプリやSNSに近づけていく際、プロフィール画像は必ず必要になると思ったため、Amazon S3を使ってプロフィール画像機能を実装しました。
+
+## 今後の課題
+
+#### 機能の拡張
+
+pusherを使った、投稿のリアルタイムかつ両方向の通信機能の組み込みや、多対多リレーションの実装によるユーザー同士のフォロー機能、また個人間のトーク機能や投稿に対する「いいね」機能を実装し、掲示板サービスから、より多くの方に利用されるSNSへと近づけていきたい。
+
+#### ユーザーの利便性向上
+
+上記の「機能の拡張」はもちろん、SNSログイン認証の導入や、このサービスのスマホアプリ版の開発にも挑戦し、より多くのユーザーに利用されるよう、ユーザーの利便性向上に努めたい。
+
+#### AWS、インフラの知識をつける
+
+VPCやSubnet、NATなどの要素を１つ１つ深く理解し、それらの必要性や仕組みの理解に努めたい。
