@@ -37,7 +37,7 @@
 
 * 言語：PHP 7.3.31
 * フレームワーク：Laravel 6.20.43
-* インフラ：AWS Cloud9（Environment type：EC2）（Instance type：t2.micro）（Platform：Amazon Linux 2 (recommended) ）
+* インフラ：AWS Cloud9（Environment type：EC2）（Instance type：t2.micro）（Platform：Amazon Linux 2）
 * データベース：MariaDB
 
 ### 開発人数
@@ -45,7 +45,7 @@
 
 ## 開発過程
 
-開発中に大変だった点、工夫した点についてです。
+開発過程において、大変だった点、工夫した点についてです。
 
 ### 大変だった点、苦労した点
 
