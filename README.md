@@ -37,8 +37,9 @@
 
 * 言語：PHP 7.3.31
 * フレームワーク：Laravel 6.20.43
-* インフラ：AWS Cloud9（Environment type：EC2）（Instance type：t2.micro）（Platform：Amazon Linux 2）
+* インフラ：AWS Cloud9
 * データベース：MariaDB
+* デプロイサーバー：heroku
 
 ### 開発人数
 * 個人開発（1人）
