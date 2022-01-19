@@ -6,6 +6,12 @@
 
 [https://frozen-tor-96422.herokuapp.com/](https://frozen-tor-96422.herokuapp.com/)
 
+【テストアカウント】
+
+ログインEmail：test@gmail.com
+
+パスワード：password
+
 ![イメージ画像1](./image-1.png)
 
 ![イメージ画像2](./image-2.png)
